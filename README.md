@@ -23,6 +23,7 @@ The initial target robot is the modular robot ROMERIN developed at the UPM ETSID
 
 M. Hernando, A. Brunete, and E. Gambao. ROMERIN: A modular climber robot for infrastructure inspection. In *Preprints of the 8th IFAC Symposium on Mechatronic Systems (MECHATRONICS 2019)*, pages 1049–1054, Vienna, Austria, Sept. 4-6 2019.
 
+![ROMERIN leg module 3D rendition](https://github.com/aslab/rmsim/blob/master/images/ROMERIN-leg-3D.png)
 
 ## A Basic Scenario
 
