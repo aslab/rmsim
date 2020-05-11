@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot name="romerin" xmlns:xacro="http://www.ros.org/wiki/xacro">
+	
+<xacro:include filename="$(find romerin_description)/urdf/macros.xacro" />
+<xacro:include filename="$(find romerin_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find romerin_description)/urdf/cuerpo.xacro" />
+<xacro:include filename="$(find romerin_description)/urdf/romerin.trans"/> 
+<!--xacro:include filename="$(find romerin_description)/urdf/cuerpo.trans" /--> 
+<!--xacro:include filename="$(find romerin_description)/urdf/cuerpo.gazebo" /-->
+<xacro:include filename="$(find romerin_description)/urdf/pata.xacro" />
+<!--xacro:include filename="$(find romerin_description)/urdf/pata.trans" /-->
+<!--xacro:include filename="$(find romerin_description)/urdf/pata.gazebo" /-->
+	
+<!-- Used for fixing robot to Gazebo 'base_link (frame reference)' -->
+<link name="base_link"/>
+
+<!-- Body -->
+<xacro:body parent="base_link" child="cuerpo"/>  
+	
+<!-- Legs -->  
+<xacro:pata number="2" lr="right"/>	
+<!--	
+<joint name="Romerin_rig_1" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.084925 -0.119 0.03"/>
+  <parent link="cuerpo"/>
+  <child link="enganche"/>
+</joint>
+-->
+</robot>
