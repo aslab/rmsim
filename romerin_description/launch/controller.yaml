@@ -5,3 +5,39 @@ romerin_controller:
     publish_rate: 50
 
   # Position Controllers --------------------------------------
+  Rev3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Rev3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Rev5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Rev5
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Rev8_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Rev8
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Rev10_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Rev10
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Rev12_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Rev12
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Rev13_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Rev13
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Rev14_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Rev14
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Rev15_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Rev15
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Rev16_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Rev16
+    pid: {p: 100.0, i: 0.01, d: 10.0}

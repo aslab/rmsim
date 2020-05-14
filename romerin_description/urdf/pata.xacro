@@ -1,507 +1,608 @@
 <?xml version="1.0" ?>
 <robot name="pata" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<!--xacro:include filename="$(find romerin_description)/urdf/materials.xacro" /-->
-<xacro:include filename="$(find romerin_description)/urdf/pata.trans" />
-<xacro:include filename="$(find romerin_description)/urdf/pata.gazebo" />
+<!--xacro:include filename="$(find patacuerpo_description)/urdf/patacuerpo.trans" /-->
+
+<xacro:property name="PI" value="3.1415926535897931"/>
 	
-<xacro:macro name="pata" params="number lr">
-	<!--number: número de pata; lr: izquierda o derecha -->
+<xacro:macro name="pata" params="lr num">
+	<!--lr: izda o dcha; num: n de pata-->
 	
+<link name="enganche_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="-0.0008835638202414636 -0.023026438950210004 7.162326287613041e-14"/>
+	<mass value="0.6779958201620729"/>
+	<inertia ixx="0.000178" ixy="2e-06" ixz="-0.0" iyy="0.000263" iyz="0.0" izz="0.000323"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="-7.5e-05 0.119 -0.03"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/enganche_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="-7.5e-05 0.119 -0.03"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/enganche_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component2_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="-3.327743548876133e-06 -0.003686600354462388 -0.0006153217354371195"/>
+	<mass value="0.04057327410573066"/>
+	<inertia ixx="3e-06" ixy="-0.0" ixz="0.0" iyy="8e-06" iyz="-0.0" izz="6e-06"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="-0.015325 0.1662 -0.03"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component2_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="-0.015325 0.1662 -0.03"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component2_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component3_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="0.017082566975035966 -0.030175162564449715 -0.011000062135107003"/>
+	<mass value="0.5890018112407169"/>
+	<inertia ixx="0.000207" ixy="-3e-06" ixz="-0.0" iyy="0.000143" iyz="-0.0" izz="0.000248"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="0.001664 0.1762 -0.041"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component3_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="0.001664 0.1762 -0.041"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component3_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component4_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="0.023500272152248945 -0.02564620791836894 -1.8395030568219006e-09"/>
+	<mass value="0.05208378573426527"/>
+	<inertia ixx="1.3e-05" ixy="0.0" ixz="0.0" iyy="2.6e-05" iyz="-0.0" izz="2.7e-05"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="0.008164 0.2215 -0.03"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component4_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="0.008164 0.2215 -0.03"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component4_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component5_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="2.7321655199363803e-07 -0.010353792081704394 7.750037417375566e-10"/>
+	<mass value="0.05208378573425636"/>
+	<inertia ixx="2.7e-05" ixy="-0.0" ixz="-0.0" iyy="2.6e-05" iyz="-0.0" izz="1.3e-05"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="-0.015336 0.2575 -0.03"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component5_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="-0.015336 0.2575 -0.03"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component5_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component6_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="2.7175869793220897e-07 -0.015124778672136407 -0.023582296616284523"/>
+	<mass value="0.5890018112407189"/>
+	<inertia ixx="0.000248" ixy="0.0" ixz="0.0" iyy="0.000143" iyz="-3e-06" izz="0.000207"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="-0.015336 0.2935 -0.0535"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component6_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="-0.015336 0.2935 -0.0535"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component6_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component7_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="0.009679299327890243 -0.13369995640458926 0.016988725070571378"/>
+	<mass value="0.8047904243141957"/>
+	<inertia ixx="0.010342" ixy="-0.0" ixz="0.0" iyy="0.000455" iyz="0.0" izz="0.010228"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="-0.004336 0.3388 -0.013"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component7_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="-0.004336 0.3388 -0.013"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component7_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component8_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="0.024875371372866634 -0.017300001288044542 -0.017039615317225636"/>
+	<mass value="0.5890018112407238"/>
+	<inertia ixx="0.000143" ixy="0.0" ixz="-3e-06" iyy="0.000248" iyz="-0.0" izz="0.000207"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="0.002664 0.6062 -0.046977"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component8_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="0.002664 0.6062 -0.046977"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component8_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component9_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="-0.01880335468036301 -0.030302739995931915 0.023500457245787268"/>
+	<mass value="0.07064606392588994"/>
+	<inertia ixx="5.1e-05" ixy="-5e-06" ixz="-0.0" iyy="4.1e-05" iyz="0.0" izz="2.9e-05"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="-0.037336 0.6235 -0.007977"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component9_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="-0.037336 0.6235 -0.007977"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component9_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component10_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="-0.0017135454980912197 -0.15691041401299965 -0.0007575519701589137"/>
+	<mass value="1.969918180322282"/>
+	<inertia ixx="0.021818" ixy="0.000391" ixz="3e-06" iyy="0.000894" iyz="-0.000131" izz="0.021632"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="-0.015336 0.6715 -0.031477"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component10_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="-0.015336 0.6715 -0.031477"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component10_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component11_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="0.007623821851629745 -2.9323939987335734e-07 -2.1019877097794293e-06"/>
+	<mass value="0.04831387336471295"/>
+	<inertia ixx="7e-06" ixy="-0.0" ixz="-0.0" iyy="5e-06" iyz="-0.0" izz="5e-06"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="-0.0307 0.932519 -0.030023"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component11_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="-0.0307 0.932519 -0.030023"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component11_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component13_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="-7.046964762767727e-05 -0.025651671856746106 -8.711431092059407e-06"/>
+	<mass value="0.9228320571083133"/>
+	<inertia ixx="0.00065" ixy="-1e-06" ixz="0.0" iyy="0.000398" iyz="0.0" izz="0.000533"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="-0.015336 0.956561 -0.030023"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component13_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="-0.015336 0.956561 -0.030023"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component13_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component14_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="-1.0024119439892842e-07 -1.2555316453166654e-07 -0.0016568293364659743"/>
+	<mass value="0.11553702060403329"/>
+	<inertia ixx="2.9e-05" ixy="-0.0" ixz="-0.0" iyy="2.9e-05" iyz="0.0" izz="3.6e-05"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="-0.01507 1.002493 0.001477"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component14_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="-0.01507 1.002493 0.001477"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component14_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component17_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="-1.2322251817693808e-07 0.003859592424359626 -4.557914220180981e-07"/>
+	<mass value="0.22106688110468858"/>
+	<inertia ixx="6.7e-05" ixy="0.0" ixz="-0.0" iyy="0.000129" iyz="-0.0" izz="6.7e-05"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="-0.01507 1.035027 -0.030023"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component17_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="-0.01507 1.035027 -0.030023"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component17_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component12_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="-0.0018786122979095599 3.870314608800385e-07 1.0481699663222876e-06"/>
+	<mass value="0.044964172872987526"/>
+	<inertia ixx="7e-06" ixy="0.0" ixz="-0.0" iyy="4e-06" iyz="0.0" izz="4e-06"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="0.007027 0.932502 -0.030032"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component12_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="0.007027 0.932502 -0.030032"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component12_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component15_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="-9.926848198830995e-08 -7.599328972318631e-06 0.0030593073916383787"/>
+	<mass value="0.11084533748383699"/>
+	<inertia ixx="1.9e-05" ixy="0.0" ixz="0.0" iyy="1.9e-05" iyz="0.0" izz="3.6e-05"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="-0.01507 1.00247 -0.061523"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component15_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="-0.01507 1.00247 -0.061523"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component15_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component16_${lr}_${num}">
+  <inertial>
+	<origin rpy="0 0 0" xyz="4.663110592786901e-06 -0.024171205343439528 -0.03812145579226034"/>
+	<mass value="0.07272237784571686"/>
+	<inertia ixx="8.5e-05" ixy="0.0" ixz="0.0" iyy="8.6e-05" iyz="-0.0" izz="2.6e-05"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="-0.01507 1.002478 -0.068144"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component16_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="-0.01507 1.002478 -0.068144"/>
+	<geometry>
+	  <mesh filename="package://patacuerpo_description/meshes/Component16_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
 	<!--Primera joint: cuerpo-pata-->
-	<joint type="fixed" name="hinge_${lr}_${number}_1"> 
-    	<parent link="cuerpo"/>
-    	<child link="enganche_${lr}_${number}"/>
-    	<xacro:if value="${lr == 'left'}">
-			<xacro:if value="${number == '1'}">
-      			<origin rpy="0 0 0" xyz="0.085075 0.119 0.03"/>
+<joint name="Rigid0_${lr}_${num}" type="fixed">
+  <parent link="cuerpo"/>
+  <child link="enganche_${lr}_${num}"/>
+    	<xacro:if value="${lr == 'l'}">
+			<xacro:if value="${num == 1}">
+      			<origin rpy="${PI} 0 0" xyz="0.085075 0.119 0.03"/>
 			</xacro:if>	
-			<xacro:if value="${number == '2'}">
-      			<origin rpy="0 0 0" xyz="7.5e-05 0.119 0.03"/>
+			<xacro:if value="${num == 2}">
+      			<origin rpy="${PI} 0 0" xyz="7.5e-05 0.119 0.03"/>
 			</xacro:if>	
-			<xacro:if value="${number == '3'}">
-      			<origin rpy="0 0 0" xyz="-0.084925 0.119 0.03"/>
+			<xacro:if value="${num == 3}">
+      			<origin rpy="${PI} 0 0" xyz="-0.084925 0.119 0.03"/>
 			</xacro:if>	
     	</xacro:if>
-    	<xacro:if value="${lr == 'right'}">
-			<xacro:if value="${number == '1'}">
+    	<xacro:if value="${lr == 'r'}">
+			<xacro:if value="${num == 1}">
       			<origin rpy="0 0 0" xyz="0.085075 -0.119 0.03"/>
 			</xacro:if>	
-			<xacro:if value="${number == '2'}">
-      			 <origin rpy="0 0 0" xyz="7.5e-05 -0.119 0.03"/>
+			<xacro:if value="${num == 2}">		
+ 				<origin rpy="0 0 0" xyz="7.5e-05 -0.119 0.03"/>
 			</xacro:if>	
-			<xacro:if value="${number == '3'}">
+			<xacro:if value="${num == 3}">
       			<origin rpy="0 0 0" xyz="-0.084925 -0.119 0.03"/>
 			</xacro:if>	
-    	</xacro:if>
-    	<!--limit effort="${limit_effort}" velocity="${limit_velocity}" lower="${limit_lower_1}" upper="${limit_upper_1}" /-->
-  	</joint>
+    	</xacro:if>		
+</joint>
+
+<joint name="Rigid1_${lr}_${num}" type="fixed">
+  <origin rpy="0 0 0" xyz="0.01525 -0.0472 0.0"/>
+  <parent link="enganche_${lr}_${num}"/>
+  <child link="Component2_${lr}_${num}"/>
+</joint>
+
+<joint name="Rigid2_${lr}_${num}" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.016989 -0.01 0.011"/>
+  <parent link="Component2_${lr}_${num}"/>
+  <child link="Component3_${lr}_${num}"/>
+</joint>
+
+<joint name="Rev3_${lr}_${num}" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.0065 -0.0453 -0.011"/>
+  <parent link="Component3_${lr}_${num}"/>
+  <child link="Component4_${lr}_${num}"/>
+  <axis xyz="-1.0 -0.0 0.0"/>
+  <limit effort="100" lower="-1.919862" upper="1.919862" velocity="100"/>
+</joint>
+
+<joint name="Rigid4_${lr}_${num}" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0235 -0.036 0.0"/>
+  <parent link="Component4_${lr}_${num}"/>
+  <child link="Component5_${lr}_${num}"/>
+</joint>
+
+<joint name="Rev5_${lr}_${num}" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0 -0.036 0.0235"/>
+  <parent link="Component5_${lr}_${num}"/>
+  <child link="Component6_${lr}_${num}"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+  <limit effort="100" lower="-1.919862" upper="1.919862" velocity="100"/>
+</joint>
+
+<joint name="Rigid6_${lr}_${num}" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.011 -0.0453 -0.0405"/>
+  <parent link="Component6_${lr}_${num}"/>
+  <child link="Component7_${lr}_${num}"/>
+</joint>
+
+<joint name="Rigid7_${lr}_${num}" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.007 -0.2674 0.033977"/>
+  <parent link="Component7_${lr}_${num}"/>
+  <child link="Component8_${lr}_${num}"/>
+</joint>
+
+<joint name="Rev8_${lr}_${num}" type="revolute">
+  <origin rpy="0 0 0" xyz="0.04 -0.0173 -0.039"/>
+  <parent link="Component8_${lr}_${num}"/>
+  <child link="Component9_${lr}_${num}"/>
+  <axis xyz="-0.0 -0.0 1.0"/>
+  <limit effort="100" lower="-0.785398" upper="3.141593" velocity="100"/>
+</joint>
+
+<joint name="Rigid9_${lr}_${num}" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.022 -0.048 0.0235"/>
+  <parent link="Component9_${lr}_${num}"/>
+  <child link="Component10_${lr}_${num}"/>
+</joint>
+
+<joint name="Rev10_${lr}_${num}" type="continuous">
+  <origin rpy="0 0 0" xyz="0.015364 -0.261019 -0.001454"/>
+  <parent link="Component10_${lr}_${num}"/>
+  <child link="Component11_${lr}_${num}"/>
+  <axis xyz="1.0 0.0 -0.0"/>
+</joint>
+
+<joint name="Rigid11_${lr}_${num}" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 -0.285061 -0.001454"/>
+  <parent link="Component10_${lr}_${num}"/>
+  <child link="Component13_${lr}_${num}"/>
+</joint>
+
+<joint name="Rev12_${lr}_${num}" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.000266 -0.045932 -0.0315"/>
+  <parent link="Component13_${lr}_${num}"/>
+  <child link="Component14_${lr}_${num}"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Rev13_${lr}_${num}" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 -0.032549 -0.038121"/>
+  <parent link="Component16_${lr}_${num}"/>
+  <child link="Component17_${lr}_${num}"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Rev14_${lr}_${num}" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.022363 -0.261002 -0.001445"/>
+  <parent link="Component10_${lr}_${num}"/>
+  <child link="Component12_${lr}_${num}"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Rev15_${lr}_${num}" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.000266 -0.045909 0.0315"/>
+  <parent link="Component13_${lr}_${num}"/>
+  <child link="Component15_${lr}_${num}"/>
+  <axis xyz="0.0 -0.0 1.0"/>
+</joint>
+
+<joint name="Rev16_${lr}_${num}" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0 -8e-06 0.006621"/>
+  <parent link="Component15_${lr}_${num}"/>
+  <child link="Component16_${lr}_${num}"/>
+  <axis xyz="0.0 -0.0 1.0"/>
+  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+</joint>
+
+<transmission name="Rev3_tran_${lr}_${num}">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev3_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev3_actr_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev5_tran_${lr}_${num}">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev5_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev5_actr_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev8_tran_${lr}_${num}">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev8_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev8_actr_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev10_tran_${lr}_${num}">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev10_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev10_actr_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev12_tran_${lr}_${num}">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev12_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev12_actr_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev13_tran_${lr}_${num}">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev13_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev13_actr_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev14_tran_${lr}_${num}">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev14_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev14_actr_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev15_tran_${lr}_${num}">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev15_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev15_actr_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev16_tran_${lr}_${num}">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev16_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev16_actr_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>	
 	
-	<link name="enganche_${lr}_${number}">
-	  <inertial>
-   		<origin rpy="0 0 0" xyz="-0.0008835638202414636 -0.023026438950210004 7.162326287613041e-14"/>
-		<mass value="0.6779958201620729"/>
-        <inertia ixx="0.000178" ixy="2e-06" ixz="-0.0" iyy="0.000263" iyz="0.0" izz="0.000323"/>
-	  </inertial>
-	  <visual>
-  		<origin rpy="0 0 0" xyz="-7.5e-05 0.119 -0.03"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/enganche.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-    	<origin rpy="0 0 0" xyz="-7.5e-05 0.119 -0.03"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/enganche.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component2_${lr}_${number}">
-	  <inertial>
-    	<origin rpy="0 0 0" xyz="-3.327743548876133e-06 -0.003686600354462388 -0.0006153217354371195"/>
-		<mass value="0.04057327410573066"/>
-  	    <inertia ixx="3e-06" ixy="-0.0" ixz="0.0" iyy="8e-06" iyz="-0.0" izz="6e-06"/>
-	  </inertial>
-	  <visual>
-    	<origin rpy="0 0 0" xyz="-0.015325 0.1662 -0.03"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component2_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-    	<origin rpy="0 0 0" xyz="-0.015325 0.1662 -0.03"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component2_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component3_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="0.017082566975035966 -0.030175162564449715 -0.011000062135107003"/>
-		<mass value="0.5890018112407169"/>
-		<inertia ixx="0.000207" ixy="-3e-06" ixz="-0.0" iyy="0.000143" iyz="-0.0" izz="0.000248"/>
-	  </inertial>
-	  <visual>
-    	<origin rpy="0 0 0" xyz="0.001664 0.1762 -0.041"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component3_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-    	<origin rpy="0 0 0" xyz="0.001664 0.1762 -0.041"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component3_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component4_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="0.023500272152248945 -0.02564620791836894 -1.8395030568219006e-09"/>
-		<mass value="0.05208378573426527"/>
-		<inertia ixx="1.3e-05" ixy="0.0" ixz="0.0" iyy="2.6e-05" iyz="-0.0" izz="2.7e-05"/>
-	  </inertial>
-	  <visual>
-    	<origin rpy="0 0 0" xyz="0.008164 0.2215 -0.03"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component4_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-    	<origin rpy="0 0 0" xyz="0.008164 0.2215 -0.03"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component4_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component5_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="2.7321655199363803e-07 -0.010353792081704394 7.750037417375566e-10"/>
-		<mass value="0.05208378573425636"/>
-		<inertia ixx="2.7e-05" ixy="-0.0" ixz="-0.0" iyy="2.6e-05" iyz="-0.0" izz="1.3e-05"/>
-	  </inertial>
-	  <visual>
-    	<origin rpy="0 0 0" xyz="-0.015336 0.2575 -0.03"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component5_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-    	<origin rpy="0 0 0" xyz="-0.015336 0.2575 -0.03"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component5_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component6_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="2.7175869793220897e-07 -0.015124778672136407 -0.023582296616284523"/>
-		<mass value="0.5890018112407189"/>
-		<inertia ixx="0.000248" ixy="0.0" ixz="0.0" iyy="0.000143" iyz="-3e-06" izz="0.000207"/>
-	  </inertial>
-	  <visual>
-    	<origin rpy="0 0 0" xyz="-0.015336 0.2935 -0.0535"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component6_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-    	<origin rpy="0 0 0" xyz="-0.015336 0.2935 -0.0535"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component6_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component7_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="0.009679299327890243 -0.13369995640458926 0.016988725070571378"/>
-		<mass value="0.8047904243141957"/>
-		<inertia ixx="0.010342" ixy="-0.0" ixz="0.0" iyy="0.000455" iyz="0.0" izz="0.010228"/>
-	  </inertial>
-	  <visual>
-		<origin rpy="0 0 0" xyz="-0.004336 0.3388 -0.013"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component7_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-		<origin rpy="0 0 0" xyz="-0.004336 0.3388 -0.013"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component7_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component8_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="0.024875371372866634 -0.017300001288044542 -0.017039615317225636"/>
-		<mass value="0.5890018112407238"/>
-		<inertia ixx="0.000143" ixy="0.0" ixz="-3e-06" iyy="0.000248" iyz="-0.0" izz="0.000207"/>
-	  </inertial>
-	  <visual>
-		<origin rpy="0 0 0" xyz="0.002664 0.6062 -0.046977"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component8_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-		<origin rpy="0 0 0" xyz="0.002664 0.6062 -0.046977"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component8_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component9_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="-0.01880335468036301 -0.030302739995931915 0.023500457245787268"/>
-		<mass value="0.07064606392588994"/>
-		<inertia ixx="5.1e-05" ixy="-5e-06" ixz="-0.0" iyy="4.1e-05" iyz="0.0" izz="2.9e-05"/>
-	  </inertial>
-	  <visual>
-		<origin rpy="0 0 0" xyz="-0.037336 0.6235 -0.007977"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component9_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-		<origin rpy="0 0 0" xyz="-0.037336 0.6235 -0.007977"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component9_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component10_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="-0.0017135454980912197 -0.15691041401299965 -0.0007575519701589137"/>
-		<mass value="1.969918180322282"/>
-		<inertia ixx="0.021818" ixy="0.000391" ixz="3e-06" iyy="0.000894" iyz="-0.000131" izz="0.021632"/>
-	  </inertial>
-	  <visual>
-		<origin rpy="0 0 0" xyz="-0.015336 0.6715 -0.031477"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component10_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-		<origin rpy="0 0 0" xyz="-0.015336 0.6715 -0.031477"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component10_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component11_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="0.007623821851629745 -2.9323939987335734e-07 -2.1019877097794293e-06"/>
-		<mass value="0.04831387336471295"/>
-		<inertia ixx="7e-06" ixy="-0.0" ixz="-0.0" iyy="5e-06" iyz="-0.0" izz="5e-06"/>
-	  </inertial>
-	  <visual>
-		<origin rpy="0 0 0" xyz="-0.0307 0.932519 -0.030023"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component11_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-		<origin rpy="0 0 0" xyz="-0.0307 0.932519 -0.030023"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component11_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component13_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="-7.046964762767727e-05 -0.025651671856746106 -8.711431092059407e-06"/>
-		<mass value="0.9228320571083133"/>
-		<inertia ixx="0.00065" ixy="-1e-06" ixz="0.0" iyy="0.000398" iyz="0.0" izz="0.000533"/>
-	  </inertial>
-	  <visual>
-		<origin rpy="0 0 0" xyz="-0.015336 0.956561 -0.030023"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component13_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-		<origin rpy="0 0 0" xyz="-0.015336 0.956561 -0.030023"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component13_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component14_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="-1.0024119439892842e-07 -1.2555316453166654e-07 -0.0016568293364659743"/>
-		<mass value="0.11553702060403329"/>
-		<inertia ixx="2.9e-05" ixy="-0.0" ixz="-0.0" iyy="2.9e-05" iyz="0.0" izz="3.6e-05"/>
-	  </inertial>
-	  <visual>
-		<origin rpy="0 0 0" xyz="-0.01507 1.002493 0.001477"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component14_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-		<origin rpy="0 0 0" xyz="-0.01507 1.002493 0.001477"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component14_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component17_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="-1.2322251817693808e-07 0.003859592424359626 -4.557914220180981e-07"/>
-		<mass value="0.22106688110468858"/>
-		<inertia ixx="6.7e-05" ixy="0.0" ixz="-0.0" iyy="0.000129" iyz="-0.0" izz="6.7e-05"/>
-	  </inertial>
-	  <visual>
-		<origin rpy="0 0 0" xyz="-0.01507 1.035027 -0.030023"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component17_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-		<origin rpy="0 0 0" xyz="-0.01507 1.035027 -0.030023"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component17_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component12_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="-0.0018786122979095599 3.870314608800385e-07 1.0481699663222876e-06"/>
-		<mass value="0.044964172872987526"/>
-		<inertia ixx="7e-06" ixy="0.0" ixz="-0.0" iyy="4e-06" iyz="0.0" izz="4e-06"/>
-	  </inertial>
-	  <visual>
-		<origin rpy="0 0 0" xyz="0.007027 0.932502 -0.030032"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component12_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-		<origin rpy="0 0 0" xyz="0.007027 0.932502 -0.030032"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component12_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component15_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="-9.926848198830995e-08 -7.599328972318631e-06 0.0030593073916383787"/>
-		<mass value="0.11084533748383699"/>
-		<inertia ixx="1.9e-05" ixy="0.0" ixz="0.0" iyy="1.9e-05" iyz="0.0" izz="3.6e-05"/>
-	  </inertial>
-	  <visual>
-		<origin rpy="0 0 0" xyz="-0.01507 1.00247 -0.061523"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component15_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-		<origin rpy="0 0 0" xyz="-0.01507 1.00247 -0.061523"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component15_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<link name="Component16_${lr}_${number}">
-	  <inertial>
-		<origin rpy="0 0 0" xyz="4.663110592786901e-06 -0.024171205343439528 -0.03812145579226034"/>
-		<mass value="0.07272237784571686"/>
-		<inertia ixx="8.5e-05" ixy="0.0" ixz="0.0" iyy="8.6e-05" iyz="-0.0" izz="2.6e-05"/>
-	  </inertial>
-	  <visual>
-		<origin rpy="0 0 0" xyz="-0.01507 1.002478 -0.068144"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component16_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-		<material name="silver"/>
-	  </visual>
-	  <collision>
-		<origin rpy="0 0 0" xyz="-0.01507 1.002478 -0.068144"/>
-		<geometry>
-		  <mesh filename="package://romerin_description/meshes/pata/Component16_1.stl" scale="0.001 0.001 0.001"/>
-		</geometry>
-	  </collision>
-	</link>
-
-	<joint name="Rigid1_${lr}_${number}" type="fixed">
-	  <origin rpy="0 0 0" xyz="0.01525 -0.0472 0.0"/>
-	  <parent link="enganche_${lr}_${number}"/>
-	  <child link="Component2_${lr}_${number}"/>
-	</joint>
-
-	<joint name="Rigid2_${lr}_${number}" type="fixed">
-	  <origin rpy="0 0 0" xyz="-0.016989 -0.01 0.011"/>
-	  <parent link="Component2_${lr}_${number}"/>
-	  <child link="Component3_${lr}_${number}"/>
-	</joint>
-
-	<joint name="Rev3_${lr}_${number}" type="revolute">
-	  <origin rpy="0 0 0" xyz="-0.0065 -0.0453 -0.011"/>
-	  <parent link="Component3_${lr}_${number}"/>
-	  <child link="Component4_${lr}_${number}"/>
-	  <axis xyz="0.0 0.0 1.0"/>
-	  <limit effort="100" lower="-1.919862" upper="1.919862" velocity="100"/>
-	</joint>
-
-	<joint name="Rigid4_${lr}_${number}" type="fixed">
-	  <origin rpy="0 0 0" xyz="0.0235 -0.036 0.0"/>
-	  <parent link="Component4_${lr}_${number}"/>
-	  <child link="Component5_${lr}_${number}"/>
-	</joint>
-
-	<joint name="Rev5_${lr}_${number}" type="revolute">
-	  <origin rpy="0 0 0" xyz="0.0 -0.036 0.0235"/>
-	  <parent link="Component5_${lr}_${number}"/>
-	  <child link="Component6_${lr}_${number}"/>
-	  <axis xyz="-1.0 -0.0 0.0"/>
-	  <limit effort="100" lower="-1.919862" upper="1.919862" velocity="100"/>
-	</joint>
-
-	<joint name="Rigid6_${lr}_${number}" type="fixed">
-	  <origin rpy="0 0 0" xyz="-0.011 -0.0453 -0.0405"/>
-	  <parent link="Component6_${lr}_${number}"/>
-	  <child link="Component7_${lr}_${number}"/>
-	</joint>
-
-	<joint name="Rigid7_${lr}_${number}" type="fixed">
-	  <origin rpy="0 0 0" xyz="-0.007 -0.2674 0.033977"/>
-	  <parent link="Component7_${lr}_${number}"/>
-	  <child link="Component8_${lr}_${number}"/>
-	</joint>
-
-	<joint name="Rev8_${lr}_${number}" type="revolute">
-	  <origin rpy="0 0 0" xyz="0.04 -0.0173 -0.039"/>
-	  <parent link="Component8_${lr}_${number}"/>
-	  <child link="Component9_${lr}_${number}"/>
-	  <axis xyz="1.0 -0.0 0.0"/>
-	  <limit effort="100" lower="-0.785398" upper="3.141593" velocity="100"/>
-	</joint>
-
-	<joint name="Rigid9_${lr}_${number}" type="fixed">
-	  <origin rpy="0 0 0" xyz="-0.022 -0.048 0.0235"/>
-	  <parent link="Component9_${lr}_${number}"/>
-	  <child link="Component10_${lr}_${number}"/>
-	</joint>
-
-	<joint name="Rev10_${lr}_${number}" type="continuous">
-	  <origin rpy="0 0 0" xyz="0.015364 -0.261019 -0.001454"/>
-	  <parent link="Component10_${lr}_${number}"/>
-	  <child link="Component11_${lr}_${number}"/>
-	  <axis xyz="-0.0 0.0 -1.0"/>
-	</joint>
-
-	<joint name="Rigid11_${lr}_${number}" type="fixed">
-	  <origin rpy="0 0 0" xyz="0.0 -0.285061 -0.001454"/>
-	  <parent link="Component10_${lr}_${number}"/>
-	  <child link="Component13_${lr}_${number}"/>
-	</joint>
-
-	<joint name="Rev12_${lr}_${number}" type="continuous">
-	  <origin rpy="0 0 0" xyz="-0.000266 -0.045932 -0.0315"/>
-	  <parent link="Component13_${lr}_${number}"/>
-	  <child link="Component14_${lr}_${number}"/>
-	  <axis xyz="-1.0 0.0 -0.0"/>
-	</joint>
-
-	<joint name="Rev13_${lr}_${number}" type="continuous">
-	  <origin rpy="0 0 0" xyz="0.0 -0.032549 -0.038121"/>
-	  <parent link="Component16_${lr}_${number}"/>
-	  <child link="Component17_${lr}_${number}"/>
-	  <axis xyz="-0.0 1.0 -0.0"/>
-	</joint>
-
-	<joint name="Rev14_${lr}_${number}" type="continuous">
-	  <origin rpy="0 0 0" xyz="-0.022363 -0.261002 -0.001445"/>
-	  <parent link="Component10_${lr}_${number}"/>
-	  <child link="Component12_${lr}_${number}"/>
-	  <axis xyz="0.0 0.0 1.0"/>
-	</joint>
-
-	<joint name="Rev15_${lr}_${number}" type="continuous">
-	  <origin rpy="0 0 0" xyz="-0.000266 -0.045909 0.0315"/>
-	  <parent link="Component13_${lr}_${number}"/>
-	  <child link="Component15_${lr}_${number}"/>
-	  <axis xyz="1.0 -0.0 -0.0"/>
-	</joint>
-
-	<joint name="Rev16_${lr}_${number}" type="revolute">
-	  <origin rpy="0 0 0" xyz="0.0 -8e-06 0.006621"/>
-	  <parent link="Component15_${lr}_${number}"/>
-	  <child link="Component16_${lr}_${number}"/>
-	  <axis xyz="1.0 -0.0 -0.0"/>
-	  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
-	</joint>
-
-</xacro:macro>
+</xacro:macro>	
+	
 </robot>
+
+

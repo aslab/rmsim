@@ -1,10 +1,9 @@
 <?xml version="1.0" ?>
-<!--esto es una prueba, el código es copiado de patacuerpo.trans-->
-<robot name="patacuerpo" xmlns:xacro="http://www.ros.org/wiki/xacro" >
-
+<robot name="romerin" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+	
 <transmission name="Rev3_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev3">
+  <joint name="Rev3_${lr}_${num}">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
   <actuator name="Rev3_actr">
