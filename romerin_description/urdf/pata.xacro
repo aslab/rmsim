@@ -371,13 +371,13 @@
   <child link="enganche_${lr}_${num}"/>
     	<xacro:if value="${lr == 'l'}">
 			<xacro:if value="${num == 1}">
-      			<origin rpy="${PI} 0 0" xyz="0.085075 0.119 0.03"/>
+      			<origin rpy="${PI} ${PI} 0" xyz="0.085075 0.119 0.03"/>
 			</xacro:if>	
 			<xacro:if value="${num == 2}">
-      			<origin rpy="${PI} 0 0" xyz="7.5e-05 0.119 0.03"/>
+      			<origin rpy="${PI} ${PI} 0" xyz="7.5e-05 0.119 0.03"/>
 			</xacro:if>	
 			<xacro:if value="${num == 3}">
-      			<origin rpy="${PI} 0 0" xyz="-0.084925 0.119 0.03"/>
+      			<origin rpy="${PI} ${PI} 0" xyz="-0.084925 0.119 0.03"/>
 			</xacro:if>	
     	</xacro:if>
     	<xacro:if value="${lr == 'r'}">
@@ -394,7 +394,7 @@
 </joint>
 
 <joint name="Rigid1_${lr}_${num}" type="fixed">
-  <origin rpy="0 0 0" xyz="0.01525 -0.0472 0.0"/>
+  <origin rpy="0 ${PI/2}  0" xyz="0.01525 -0.0472 0.0"/>
   <parent link="enganche_${lr}_${num}"/>
   <child link="Component2_${lr}_${num}"/>
 </joint>
