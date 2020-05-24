@@ -79,5 +79,5 @@ This README.md follows [GitHub Markdown Syntax](https://guides.github.com/featur
 
 Follow [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/).
 
-Follow [Google C++ Style Guide] (https://google.github.io/styleguide/cppguide.html)
+Follow [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
 
