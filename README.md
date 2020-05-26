@@ -76,3 +76,8 @@ We use [ROS 2](https://index.ros.org/doc/ros2/) in ROBOMINERS and hence in this 
 ***
 
 This README.md follows [GitHub Markdown Syntax](https://guides.github.com/features/mastering-markdown/).
+
+Follow [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/).
+
+Follow [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
+
