@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<robot name="cuerpo" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	
+<link name="cuerpo">
+  <inertial>
+	<origin rpy="0 0 0" xyz="1.2607010642475455e-06 -1.9705023201073385e-17 0.030000000000039998"/>
+	<mass value="28.985638173838137"/>
+	<inertia ixx="0.155393" ixy="-0.0" ixz="-0.0" iyy="0.159826" iyz="-0.0" izz="0.297615"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="0 0 0"/>
+	<geometry>
+	  <mesh filename="package://robominer_description/meshes/cuerpo.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="0 0 0"/>
+	<geometry>
+	  <mesh filename="package://robominer_description/meshes/cuerpo.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+</robot>

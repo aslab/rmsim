@@ -6,8 +6,9 @@
 <gazebo>
   <plugin filename="libgazebo_ros_control.so" name="control"/> 
       <!--robotNamespace>/romerin</robotNamespace-->
+</gazebo>	
 	<!--En una entrada de foro ponen esa etiqueta robotNamespace pero en otra dicen que mejor no ponerla-->
-</gazebo>
+	
 <gazebo reference="base_link">
   <material>${body_color}</material>
   <mu1>0.2</mu1>

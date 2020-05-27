@@ -1,7 +1,7 @@
 <!-- 
 <launch>
-  <param command="$(find xacro)/xacro $(find romerin_description)/urdf/romerin.xacro" name="robot_description"/>
-  <node args="-param robot_description -urdf -model romerin" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+  <param command="$(find xacro)/xacro $(find robominer_description)/urdf/robominer.xacro" name="robot_description"/>
+  <node args="-param robot_description -urdf -model robominer" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="true"/>
     <arg name="use_sim_time" value="true"/>
@@ -20,11 +20,11 @@
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
-  <arg name="model" default="$(find romerin_description)/urdf/romerin.xacro"/>
+  <arg name="model" default="$(find robominer_description)/urdf/robominer.xacro"/>
 
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched --> 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find romerin_description)/worlds/romerin.world" />
+    <arg name="world_name" value="$(find robominer_description)/worlds/robominer.world" />
     <arg name="debug" value="$(arg debug)" />
     <arg name="gui" value="$(arg gui)" />
     <arg name="paused" value="$(arg paused)"/>
@@ -45,7 +45,7 @@
 -->	
    <!-- Load the URDF into the ROS Parameter Server -->
   <param name="robot_description"
-    command="$(find xacro)/xacro --inorder '$(find romerin_description)/urdf/romerin.xacro'" />
+    command="$(find xacro)/xacro --inorder '$(find robominer_description)/urdf/robominer.xacro'" />
 
   <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"

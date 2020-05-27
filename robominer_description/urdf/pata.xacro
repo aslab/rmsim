@@ -1,0 +1,425 @@
+<?xml version="1.0" ?>
+<robot name="pata" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+<xacro:property name="PI" value="3.1415926535897931"/>
+	
+<xacro:macro name="pata" params="lr num">
+	<!--lr: izda o dcha; num: n de pata-->
+	
+<link name="Component1_${lr}_${num}">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.016098173620451704 0.010194176532741607 0.0004098876929128892"/>
+    <mass value="0.6779958201620729"/>
+    <inertia ixx="0.000178" ixy="2e-06" ixz="-0.0" iyy="0.000263" iyz="0.0" izz="0.000323"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>	
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component1_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component2_${lr}_${num}">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0006149315356479564 -0.0036869848715110638 3.2154364889409545e-06"/>
+    <mass value="0.04057327410573066"/>
+    <inertia ixx="6e-06" ixy="-0.0" ixz="-0.0" iyy="8e-06" iyz="0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-3.5e-05 0.013979 -0.00041"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-3.5e-05 0.013979 -0.00041"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component2_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component3_${lr}_${num}">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.010999671935318412 -0.03017554708149813 -0.017082679282096242"/>
+    <mass value="0.5890018112407169"/>
+    <inertia ixx="0.000248" ixy="-0.0" ixz="0.0" iyy="0.000143" iyz="3e-06" izz="0.000207"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.011035 0.023979 -0.017399"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.011035 0.023979 -0.017399"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component3_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component4_${lr}_${num}">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.8836028582182376e-07 -0.02564659243541706 -0.023500384459309957"/>
+    <mass value="0.05208378573426527"/>
+    <inertia ixx="2.7e-05" ixy="-0.0" ixz="-0.0" iyy="2.6e-05" iyz="-0.0" izz="1.3e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-3.5e-05 0.069279 -0.023899"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-3.5e-05 0.069279 -0.023899"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component4_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component5_${lr}_${num}">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.909747923353329e-07 -0.010354176598752526 -3.8552361335936723e-07"/>
+    <mass value="0.05208378573425636"/>
+    <inertia ixx="1.3e-05" ixy="-0.0" ixz="0.0" iyy="2.6e-05" iyz="0.0" izz="2.7e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-3.5e-05 0.105279 -0.000399"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-3.5e-05 0.105279 -0.000399"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component5_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component6_${lr}_${num}">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.023581906416495643 -0.015125163189184582 -3.840657600155174e-07"/>
+    <mass value="0.5890018112407189"/>
+    <inertia ixx="0.000207" ixy="-3e-06" ixz="-0.0" iyy="0.000143" iyz="-0.0" izz="0.000248"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.023535 0.141279 -0.000399"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.023535 0.141279 -0.000399"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component6_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component7_${lr}_${num}">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.016989115270362485 -0.13370034092163718 -0.009679411634955093"/>
+    <mass value="0.8047904243141957"/>
+    <inertia ixx="0.010228" ixy="0.0" ixz="-0.0" iyy="0.000455" iyz="0.0" izz="0.010342"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.016965 0.186579 -0.011399"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.016965 0.186579 -0.011399"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component7_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component8_${lr}_${num}">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.01704022511743504 -0.01730038580509191 -0.024875483679934324"/>
+    <mass value="0.5890018112407238"/>
+    <inertia ixx="0.000207" ixy="-0.0" ixz="3e-06" iyy="0.000248" iyz="-0.0" izz="0.000143"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.017013 0.453979 -0.018399"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.017013 0.453979 -0.018399"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component8_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component9_${lr}_${num}">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.023499847445577277 -0.030303124512979562 0.018803242373294574"/>
+    <mass value="0.07064606392588994"/>
+    <inertia ixx="2.9e-05" ixy="0.0" ixz="0.0" iyy="4.1e-05" iyz="5e-06" izz="5.1e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.021987 0.471279 0.021601"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component9_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.021987 0.471279 0.021601"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component9_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component10_${lr}_${num}">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0001462881510200071 -0.07565896477109058 0.0034500995512585075"/>
+    <mass value="1.0490517458913435"/>
+    <inertia ixx="0.006442" ixy="-1.9e-05" ixz="-0.0" iyy="0.00043" iyz="-7.4e-05" izz="0.006454"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.001513 0.519279 -0.000399"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component10_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.001513 0.519279 -0.000399"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component10_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component11_${lr}_${num}">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0198056930527322 -0.04596785880612919 -0.016515232602085917"/>
+    <mass value="2.634371860361076"/>
+    <inertia ixx="0.003233" ixy="-0.0" ixz="0.0" iyy="0.001378" iyz="1.3e-05" izz="0.003593"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.021246 0.754979 -0.016997"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component11_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.021246 0.754979 -0.016997"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component11_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="Component12_${lr}_${num}">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.03612166848566285 -0.03816330247780275 -3.670740474915864e-07"/>
+    <mass value="0.4300735435640777"/>
+    <inertia ixx="0.000136" ixy="0.0" ixz="0.0" iyy="0.000245" iyz="0.0" izz="0.000199"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.037428 0.84017 -0.000763"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component12_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.037428 0.84017 -0.000763"/>
+    <geometry>
+	  <mesh filename="package://robominer_description/meshes/Component12_1.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+	<!--Primera joint: cuerpo-pata-->
+	<!--Por algun motivo el plugin nos daba mal la coordenada y de los origenes de esta joint y habido que estimarla a mano-->
+<joint name="Rigid0_${lr}_${num}" type="fixed">
+  <parent link="cuerpo"/>
+  <child link="Component1_${lr}_${num}"/>
+    	<xacro:if value="${lr == 'r'}">
+			<xacro:if value="${num == 1}">
+  				<!--origin rpy="0 0 0" xyz="0.100325 -0.11755 0.03"/-->
+  				<origin rpy="0 0 0" xyz="0.100325 -0.151 0.03"/>
+			</xacro:if>	
+			<xacro:if value="${num == 2}">		
+ 				<!--origin rpy="0 0 0" xyz="0.015325 -0.11755 0.03"/-->	
+ 				<origin rpy="0 0 0" xyz="0.015325 -0.151 0.03"/>
+			</xacro:if>	
+			<xacro:if value="${num == 3}">
+  				<!--origin rpy="0 0 0" xyz="-0.069675 -0.11755 0.03"/-->
+  				<origin rpy="0 0 0" xyz="-0.069675 -0.151 0.03"/>
+			</xacro:if>	
+    	</xacro:if>		
+    	<xacro:if value="${lr == 'l'}">
+			<xacro:if value="${num == 1}">
+  				<!--origin rpy="${PI} 0 0" xyz="0.100325 0.11755 0.03"/-->
+  				<origin rpy="${PI} 0 0" xyz="0.100325 0.151 0.03"/>
+			</xacro:if>	
+			<xacro:if value="${num == 2}">
+  				<!--origin rpy="${PI} 0 0" xyz="0.015325 0.11755 0.03"/-->
+  				<origin rpy="${PI} 0 0" xyz="0.015325 0.151 0.03"/>
+			</xacro:if>	
+			<xacro:if value="${num == 3}">
+  				<!--origin rpy="${PI} 0 0" xyz="-0.069675 0.11755 0.03"/-->
+  				<origin rpy="${PI} 0 0" xyz="-0.069675 0.151 0.03"/>
+			</xacro:if>	
+    	</xacro:if>
+</joint>
+
+<joint name="Rigid1_${lr}_${num}" type="fixed">
+  <xacro:if value="${lr == 'r'}">
+ 	  <origin rpy="0 0 0" xyz="3.5e-05 -0.013979 0.00041"/>
+  </xacro:if>	
+  <xacro:if value="${lr == 'l'}">
+      <origin rpy="0 ${PI} 0" xyz="3.5e-05 -0.013979 0.00041"/>
+  </xacro:if>
+  <parent link="Component1_${lr}_${num}"/>
+  <child link="Component2_${lr}_${num}"/>
+</joint>
+
+<joint name="Rigid2_${lr}_${num}" type="fixed">
+  <origin rpy="0 0 0" xyz="0.011 -0.01 0.016989"/>
+  <parent link="Component2_${lr}_${num}"/>
+  <child link="Component3_${lr}_${num}"/>
+</joint>
+
+<joint name="Rev3_${lr}_${num}" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.011 -0.0453 0.0065"/>
+  <parent link="Component3_${lr}_${num}"/>
+  <child link="Component4_${lr}_${num}"/>
+  <axis xyz="-0.0 -0.0 1.0"/>
+  <limit effort="100" lower="-1.919862" upper="1.919862" velocity="100"/>
+</joint>
+
+<joint name="Rigid4_${lr}_${num}" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 -0.036 -0.0235"/>
+  <parent link="Component4_${lr}_${num}"/>
+  <child link="Component5_${lr}_${num}"/>
+</joint>
+
+<joint name="Rev5_${lr}_${num}" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0235 -0.036 0.0"/>
+  <parent link="Component5_${lr}_${num}"/>
+  <child link="Component6_${lr}_${num}"/>
+  <axis xyz="-1.0 0.0 -0.0"/>
+  <limit effort="100" lower="-1.919862" upper="1.919862" velocity="100"/>
+</joint>
+
+<joint name="Rigid6_${lr}_${num}" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.0405 -0.0453 0.011"/>
+  <parent link="Component6_${lr}_${num}"/>
+  <child link="Component7_${lr}_${num}"/>
+</joint>
+
+<joint name="Rigid7_${lr}_${num}" type="fixed">
+  <origin rpy="0 0 0" xyz="0.033978 -0.2674 0.007"/>
+  <parent link="Component7_${lr}_${num}"/>
+  <child link="Component8_${lr}_${num}"/>
+</joint>
+
+<joint name="Rev8_${lr}_${num}" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.039 -0.0173 -0.04"/>
+  <parent link="Component8_${lr}_${num}"/>
+  <child link="Component9_${lr}_${num}"/>
+  <axis xyz="1.0 -0.0 0.0"/>
+  <limit effort="100" lower="-0.785398" upper="3.141593" velocity="100"/>
+</joint>
+
+<joint name="Rigid9_${lr}_${num}" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0235 -0.048 0.022"/>
+  <parent link="Component9_${lr}_${num}"/>
+  <child link="Component10_${lr}_${num}"/>
+</joint>
+
+<joint name="Rigid10_${lr}_${num}" type="fixed">
+  <origin rpy="0 0 0" xyz="0.019733 -0.2357 0.016598"/>
+  <parent link="Component10_${lr}_${num}"/>
+  <child link="Component11_${lr}_${num}"/>
+</joint>
+
+<joint name="Rev11_${lr}_${num}" type="revolute">
+  <origin rpy="0 0 0" xyz="0.016182 -0.085191 -0.016234"/>
+  <parent link="Component11_${lr}_${num}"/>
+  <child link="Component12_${lr}_${num}"/>
+  <axis xyz="1.0 -0.0 0.0"/>
+  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+</joint>
+	
+<transmission name="Rev3_tran_${lr}_${num}">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev3_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev3_actr_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev5_tran_${lr}_${num}">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev5_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev5_actr_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev8_tran_${lr}_${num}">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev8_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev8_actr_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev11_tran_${lr}_${num}">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev11_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev11_actr_${lr}_${num}">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+	
+</xacro:macro>	
+	
+</robot>
+
+

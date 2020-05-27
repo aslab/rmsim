@@ -4,6 +4,7 @@ romerin_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
 
+
   # Position Controllers --------------------------------------
   # Pata l1
   Rev3_l_1_position_controller:

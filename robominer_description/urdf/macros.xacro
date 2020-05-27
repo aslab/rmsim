@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="romerin" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="robominer" xmlns:xacro="http://www.ros.org/wiki/xacro">
       
 	<xacro:macro name="body" params="parent child">
 		<joint name="fixed" type="fixed">
