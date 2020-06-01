@@ -5,7 +5,8 @@
 <link name="cuerpo">
   <inertial>
 	<origin rpy="0 0 0" xyz="1.2607010642475455e-06 -1.9705023201073385e-17 0.030000000000039998"/>
-	<mass value="28.985638173838137"/>
+	<!--mass value="28.985638173838137"/-->
+	<mass value="2"/>
 	<inertia ixx="0.155393" ixy="-0.0" ixz="-0.0" iyy="0.159826" iyz="-0.0" izz="0.297615"/>
   </inertial>
   <visual>
