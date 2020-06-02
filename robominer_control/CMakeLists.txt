@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(robominer_control)
 
-<<<<<<< HEAD
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 
@@ -197,6 +196,10 @@ catkin_install_python(PROGRAMS scripts/talker.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
+catkin_install_python(PROGRAMS scripts/talker.py scripts/listener.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
 #############
 ## Testing ##
 #############
@@ -209,14 +212,3 @@ catkin_install_python(PROGRAMS scripts/talker.py
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-=======
-find_package(catkin REQUIRED)
-
-catkin_package()
-
-install(DIRECTORY config
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
-
-install(DIRECTORY launch
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
->>>>>>> 9d281d2db7cd0125606e4a5d42e7e03b34d0c9af

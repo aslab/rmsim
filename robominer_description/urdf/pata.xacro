@@ -373,6 +373,8 @@
   <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
 </joint>
 	
+	<!--Transmisiones-->
+	
 <transmission name="Rev3_tran_${lr}_${num}">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="Rev3_${lr}_${num}">
@@ -417,7 +419,64 @@
   </actuator>
 </transmission>
 
+	<!--Sensores-->
 	
+<!-- Enable the Joint Feedback -->
+<gazebo reference="Rev3_${lr}_${num}">
+<provideFeedback>true</provideFeedback>
+</gazebo>
+<!-- The ft_sensor plugin -->
+<gazebo>
+<plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+  <robotNamespace>/robominer</robotNamespace>
+<updateRate>100.0</updateRate>
+<topicName>Rev3_${lr}_${num}_ft_sensor_topic</topicName>
+<jointName>Rev3_${lr}_${num}</jointName>
+</plugin>
+</gazebo>	
+
+<!-- Enable the Joint Feedback -->
+<gazebo reference="Rev5_${lr}_${num}">
+<provideFeedback>true</provideFeedback>
+</gazebo>
+<!-- The ft_sensor plugin -->
+<gazebo>
+<plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+  <robotNamespace>/robominer</robotNamespace>
+<updateRate>100.0</updateRate>
+<topicName>Rev5_${lr}_${num}_ft_sensor_topic</topicName>
+<jointName>Rev5_${lr}_${num}</jointName>
+</plugin>
+</gazebo>	
+
+<!-- Enable the Joint Feedback -->
+<gazebo reference="Rev8_${lr}_${num}">
+<provideFeedback>true</provideFeedback>
+</gazebo>
+<!-- The ft_sensor plugin -->
+<gazebo>
+<plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+  <robotNamespace>/robominer</robotNamespace>
+<updateRate>100.0</updateRate>
+<topicName>Rev8_${lr}_${num}_ft_sensor_topic</topicName>
+<jointName>Rev8_${lr}_${num}</jointName>
+</plugin>
+</gazebo>	
+
+<!-- Enable the Joint Feedback -->
+<gazebo reference="Rev11_${lr}_${num}">
+<provideFeedback>true</provideFeedback>
+</gazebo>
+<!-- The ft_sensor plugin -->
+<gazebo>
+<plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+  <robotNamespace>/robominer</robotNamespace>
+<updateRate>100.0</updateRate>
+<topicName>Rev11_${lr}_${num}_ft_sensor_topic</topicName>
+<jointName>Rev11_${lr}_${num}</jointName>
+</plugin>
+</gazebo>	
+		
 </xacro:macro>	
 	
 </robot>

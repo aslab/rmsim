@@ -28,9 +28,10 @@ def talker():
 
     ]
     
-    rospy.init_node('robominer_talker', anonymous=True)
+    rospy.init_node('robominer_joint_command_talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
+            
         pos = [
             #Pata r1
             [math.pi/4, -math.pi/4, math.pi/4, 0],
@@ -45,6 +46,22 @@ def talker():
             #Pata l3
             [math.pi/4, -math.pi/4, math.pi/4, 0]
         ]
+        
+#        pos = [
+            #Pata r1
+#            [0, 0, 0, math.pi],
+            #Pata r2
+#            [0, 0, 0, math.pi/2],
+            #Pata r3
+#            [0, 0, 0, math.pi/2],
+            #Pata l1
+#            [0, 0, 0, math.pi/2],
+            #Pata l2
+#            [0, 0, 0, math.pi/2],
+            #Pata l3
+#            [0, 0, 0, math.pi/2]
+#        ]
+        
         rospy.loginfo(pos)
         #Pata r1
         pub[0][0].publish(pos[0][0])
