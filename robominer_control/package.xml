@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
+<<<<<<< HEAD
 <package format="2">
+=======
+<package>
+>>>>>>> 9d281d2db7cd0125606e4a5d42e7e03b34d0c9af
   <name>robominer_control</name>
   <version>0.0.0</version>
   <description>The robominer_control package</description>
@@ -7,7 +11,11 @@
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
+<<<<<<< HEAD
   <maintainer email="antonio@todo.todo">antonio</maintainer>
+=======
+  <maintainer email="esther@todo.todo">esther</maintainer>
+>>>>>>> 9d281d2db7cd0125606e4a5d42e7e03b34d0c9af
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
@@ -49,6 +57,7 @@
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
+<<<<<<< HEAD
   <build_depend>controller_manager</build_depend>
   <build_depend>joint_state_controller</build_depend>
   <build_depend>robot_state_publisher</build_depend>
@@ -61,11 +70,21 @@
   <exec_depend>rqt_gui</exec_depend>
   <exec_depend>effort_controllers</exec_depend>
 
+=======
+  <run_depend>controller_manager</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rqt_gui</run_depend>
+  <run_depend>effort_controllers</run_depend>
+>>>>>>> 9d281d2db7cd0125606e4a5d42e7e03b34d0c9af
 
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9d281d2db7cd0125606e4a5d42e7e03b34d0c9af
   </export>
 </package>

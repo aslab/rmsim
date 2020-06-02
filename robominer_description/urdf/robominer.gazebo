@@ -4,9 +4,15 @@
 <xacro:property name="body_color" value="Gazebo/Silver" />
 
 <gazebo>
+<<<<<<< HEAD
   <plugin filename="libgazebo_ros_control.so" name="control"> 
       <robotNamespace>/robominer</robotNamespace>
   </plugin> 
+=======
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"> 
+      <robotNamespace>/robominer</robotNamespace>
+  </plugin>
+>>>>>>> 9d281d2db7cd0125606e4a5d42e7e03b34d0c9af
 </gazebo>	
 	<!--En una entrada de foro ponen esa etiqueta robotNamespace pero en otra dicen que mejor no ponerla-->
 	
