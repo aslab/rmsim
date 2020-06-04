@@ -5,8 +5,8 @@
 <xacro:include filename="$(find robominer_description)/urdf/macros.xacro" />
 <xacro:include filename="$(find robominer_description)/urdf/pata.xacro" />
 <xacro:include filename="$(find robominer_description)/urdf/cuerpo.xacro" />
-<xacro:include filename="$(find robominer_description)/urdf/robominer.gazebo" />
-<!--xacro:include filename="$(find robominer_description)/urdf/robominer_alt.gazebo" /-->
+<!--xacro:include filename="$(find robominer_description)/urdf/robominer.gazebo"/-->
+<xacro:include filename="$(find robominer_description)/urdf/robominer_alt.gazebo"/>
 <!--xacro:include filename="$(find robominer_description)/urdf/robominer.trans" /-->
 	<!--robominer.trans no se incluye porque su codigo se ha pegado en pata.xacro-->	
 

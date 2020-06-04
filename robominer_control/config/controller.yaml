@@ -4,121 +4,122 @@
     type: joint_state_controller/JointStateController
     publish_rate: 50
 
-#La p original de todos los controladores era 100 pero para que se pongan los pies en la posicion correcta hubo que subir a 1000 las p de sus articulaciones (Rev11)
+
+# pid original comun a todas las articulaciones: pid: {p:_100.0, i:_0.01, d:_10.0}
 
   # Position Controllers --------------------------------------
   # Pata r1
   Rev3_r_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev3_r_1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev5_r_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev5_r_1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev8_r_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev8_r_1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev11_r_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev11_r_1
-    pid: {p: 1000.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   
 
   # Pata r2
   Rev3_r_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev3_r_2
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev5_r_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev5_r_2
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev8_r_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev8_r_2
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev11_r_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev11_r_2
-    pid: {p: 1000.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   
 
   # Pata r3
   Rev3_r_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev3_r_3
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev5_r_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev5_r_3
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev8_r_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev8_r_3
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev11_r_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev11_r_3
-    pid: {p: 1000.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   
   
   # Pata l1
   Rev3_l_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev3_l_1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev5_l_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev5_l_1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev8_l_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev8_l_1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev11_l_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev11_l_1
-    pid: {p: 1000.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   
 
   # Pata l2
   Rev3_l_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev3_l_2
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev5_l_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev5_l_2
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev8_l_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev8_l_2
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev11_l_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev11_l_2
-    pid: {p: 1000.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
  
 
   # Pata l3
   Rev3_l_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev3_l_3
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev5_l_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev5_l_3
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev8_l_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev8_l_3
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   Rev11_l_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev11_l_3
-    pid: {p: 1000.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 1.0}
   
 
   

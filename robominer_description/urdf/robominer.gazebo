@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 
+<!--Aunque a partir de ahora usaremos robominer_alt.gazebo no borro este por el momento-->
+
 <robot name="robominer" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
 <xacro:property name="body_color" value="Gazebo/Silver" />
