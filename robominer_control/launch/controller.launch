@@ -1,9 +1,5 @@
 <launch>
 	
-<!--group ns="/robominer"--> 
-	<!--So for some reason, the launch file cannot find the URDF model, I guess. So we have to show ros the way.-->
-	<!--param name="robot_description" command="cat $(find robominer_description)/urdf/robominer.xacro"/-->
-	
 	<!-- Load joint controller configurations from YAML file to parameter server -->
 	<rosparam file="$(find robominer_control)/config/controller.yaml" command="load" ns="/robominer"/>
 	
@@ -21,6 +17,10 @@
 	<node name="robot_state_publisher" output="screen" pkg="robot_state_publisher" respawn="false" type="robot_state_publisher" ns="/robominer"> 
 	  <remap from="/joint_states" to="/robominer/joint_states"/>
 	</node>
-<!--/group-->
 	
+	<!--Open Rviz to view TF>
+  <arg default="$(find robominer_description)/launch/urdf.rviz" name="rvizconfig"/>
+  <node name="rviz" pkg="rviz" required="true" type="rviz" args="-d $(arg rvizconfig)"/>
+	-->
+
 </launch>

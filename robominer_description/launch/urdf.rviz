@@ -150,152 +150,32 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        Component13_l_1:
+        Component1_l_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Component13_l_2:
+        Component1_l_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Component13_l_3:
+        Component1_l_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Component13_r_1:
+        Component1_r_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Component13_r_2:
+        Component1_r_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Component13_r_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component14_l_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component14_l_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component14_l_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component14_r_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component14_r_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component14_r_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component15_l_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component15_l_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component15_l_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component15_r_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component15_r_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component15_r_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component16_l_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component16_l_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component16_l_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component16_r_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component16_r_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component16_r_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component17_l_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component17_l_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component17_l_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component17_r_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component17_r_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Component17_r_3:
+        Component1_r_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -553,36 +433,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        enganche_l_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        enganche_l_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        enganche_l_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        enganche_r_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        enganche_r_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        enganche_r_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -590,19 +440,246 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        Component10_l_1:
+          Value: true
+        Component10_l_2:
+          Value: true
+        Component10_l_3:
+          Value: true
+        Component10_r_1:
+          Value: true
+        Component10_r_2:
+          Value: true
+        Component10_r_3:
+          Value: true
+        Component11_l_1:
+          Value: true
+        Component11_l_2:
+          Value: true
+        Component11_l_3:
+          Value: true
+        Component11_r_1:
+          Value: true
+        Component11_r_2:
+          Value: true
+        Component11_r_3:
+          Value: true
+        Component12_l_1:
+          Value: true
+        Component12_l_2:
+          Value: true
+        Component12_l_3:
+          Value: true
+        Component12_r_1:
+          Value: true
+        Component12_r_2:
+          Value: true
+        Component12_r_3:
+          Value: true
+        Component1_l_1:
+          Value: true
+        Component1_l_2:
+          Value: true
+        Component1_l_3:
+          Value: true
+        Component1_r_1:
+          Value: true
+        Component1_r_2:
+          Value: true
+        Component1_r_3:
+          Value: true
+        Component2_l_1:
+          Value: true
+        Component2_l_2:
+          Value: true
+        Component2_l_3:
+          Value: true
+        Component2_r_1:
+          Value: true
+        Component2_r_2:
+          Value: true
+        Component2_r_3:
+          Value: true
+        Component3_l_1:
+          Value: true
+        Component3_l_2:
+          Value: true
+        Component3_l_3:
+          Value: true
+        Component3_r_1:
+          Value: true
+        Component3_r_2:
+          Value: true
+        Component3_r_3:
+          Value: true
+        Component4_l_1:
+          Value: true
+        Component4_l_2:
+          Value: true
+        Component4_l_3:
+          Value: true
+        Component4_r_1:
+          Value: true
+        Component4_r_2:
+          Value: true
+        Component4_r_3:
+          Value: true
+        Component5_l_1:
+          Value: true
+        Component5_l_2:
+          Value: true
+        Component5_l_3:
+          Value: true
+        Component5_r_1:
+          Value: true
+        Component5_r_2:
+          Value: true
+        Component5_r_3:
+          Value: true
+        Component6_l_1:
+          Value: true
+        Component6_l_2:
+          Value: true
+        Component6_l_3:
+          Value: true
+        Component6_r_1:
+          Value: true
+        Component6_r_2:
+          Value: true
+        Component6_r_3:
+          Value: true
+        Component7_l_1:
+          Value: true
+        Component7_l_2:
+          Value: true
+        Component7_l_3:
+          Value: true
+        Component7_r_1:
+          Value: true
+        Component7_r_2:
+          Value: true
+        Component7_r_3:
+          Value: true
+        Component8_l_1:
+          Value: true
+        Component8_l_2:
+          Value: true
+        Component8_l_3:
+          Value: true
+        Component8_r_1:
+          Value: true
+        Component8_r_2:
+          Value: true
+        Component8_r_3:
+          Value: true
+        Component9_l_1:
+          Value: true
+        Component9_l_2:
+          Value: true
+        Component9_l_3:
+          Value: true
+        Component9_r_1:
+          Value: true
+        Component9_r_2:
+          Value: true
+        Component9_r_3:
+          Value: true
+        base_link:
+          Value: true
+        cuerpo:
+          Value: true
       Marker Scale: 0.5
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        base_link:
+          cuerpo:
+            Component1_l_1:
+              Component2_l_1:
+                Component3_l_1:
+                  Component4_l_1:
+                    Component5_l_1:
+                      Component6_l_1:
+                        Component7_l_1:
+                          Component8_l_1:
+                            Component9_l_1:
+                              Component10_l_1:
+                                Component11_l_1:
+                                  Component12_l_1:
+                                    {}
+            Component1_l_2:
+              Component2_l_2:
+                Component3_l_2:
+                  Component4_l_2:
+                    Component5_l_2:
+                      Component6_l_2:
+                        Component7_l_2:
+                          Component8_l_2:
+                            Component9_l_2:
+                              Component10_l_2:
+                                Component11_l_2:
+                                  Component12_l_2:
+                                    {}
+            Component1_l_3:
+              Component2_l_3:
+                Component3_l_3:
+                  Component4_l_3:
+                    Component5_l_3:
+                      Component6_l_3:
+                        Component7_l_3:
+                          Component8_l_3:
+                            Component9_l_3:
+                              Component10_l_3:
+                                Component11_l_3:
+                                  Component12_l_3:
+                                    {}
+            Component1_r_1:
+              Component2_r_1:
+                Component3_r_1:
+                  Component4_r_1:
+                    Component5_r_1:
+                      Component6_r_1:
+                        Component7_r_1:
+                          Component8_r_1:
+                            Component9_r_1:
+                              Component10_r_1:
+                                Component11_r_1:
+                                  Component12_r_1:
+                                    {}
+            Component1_r_2:
+              Component2_r_2:
+                Component3_r_2:
+                  Component4_r_2:
+                    Component5_r_2:
+                      Component6_r_2:
+                        Component7_r_2:
+                          Component8_r_2:
+                            Component9_r_2:
+                              Component10_r_2:
+                                Component11_r_2:
+                                  Component12_r_2:
+                                    {}
+            Component1_r_3:
+              Component2_r_3:
+                Component3_r_3:
+                  Component4_r_3:
+                    Component5_r_3:
+                      Component6_r_3:
+                        Component7_r_3:
+                          Component8_r_3:
+                            Component9_r_3:
+                              Component10_r_3:
+                                Component11_r_3:
+                                  Component12_r_3:
+                                    {}
       Update Interval: 0
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -631,7 +708,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.3695532083511353
+      Distance: 1.9241236448287964
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
