@@ -1,0 +1,1 @@
+El archivo robominer.trans realmente sobra ya que su contenido se copió a pata.xacro ya que no se podían usar nombres dinámicos debido a conflictos al incluir los archivos.

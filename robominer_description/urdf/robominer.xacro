@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<robot name="robominer" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find robominer_description)/urdf/materials.xacro" />
+<!--xacro:include filename="$(find robominer_description)/urdf/macros.xacro" /-->
+<xacro:include filename="$(find robominer_description)/urdf/pata.xacro" />
+<xacro:include filename="$(find robominer_description)/urdf/cuerpo.xacro" />
+<!--xacro:include filename="$(find robominer_description)/urdf/robominer.gazebo"/-->
+<xacro:include filename="$(find robominer_description)/urdf/robominer_alt.gazebo"/>
+<!--xacro:include filename="$(find robominer_description)/urdf/robominer.trans" /-->
+	<!--robominer.trans no se incluye porque su codigo se ha pegado en pata.xacro-->	
+
+<!-- Used for fixing robot to Gazebo 'base_link (frame reference)' -->
+<link name="base_link"/>
+	
+<!-- Body -->
+<xacro:body parent="base_link" child="cuerpo"/>  
+	
+<!--Legs-->
+<xacro:pata lr="r" num="1"/>
+<xacro:pata lr="r" num="2"/>	
+<xacro:pata lr="r" num="3"/>
+<xacro:pata lr="l" num="1"/>
+<xacro:pata lr="l" num="2"/>
+<xacro:pata lr="l" num="3"/>
+
+</robot>
