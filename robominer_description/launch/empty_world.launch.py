@@ -38,7 +38,7 @@ def generate_launch_description():
             os.path.join(pkg_gazebo_ros, 'launch', 'gazebo.launch.py'),
         )
     )
-    
+    '''
     # Spawn robot
     robot_spawner = Node(
 		package = 'gazebo_ros',
@@ -47,7 +47,15 @@ def generate_launch_description():
 			'-file', os.path.join(pkg_robominer_description, 'models/robominer/model.sdf')],
 		output = 'screen'
 	)
-	
+	'''
+    # Spawn robot
+    robot_spawner = Node(
+		package = 'gazebo_ros',
+		node_executable = 'spawn_entity.py',
+		arguments = ['-entity', 'robominer',
+			'-file', os.path.join(pkg_robominer_description, 'urdf/robominer.urdf')],
+		output = 'screen'
+	)
     return LaunchDescription([
         DeclareLaunchArgument(
           'world',

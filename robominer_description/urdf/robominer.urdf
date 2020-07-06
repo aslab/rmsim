@@ -1209,12 +1209,12 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <!--Sensores-->
-  <!-- Enable the Joint Feedback -->
+  <!--Sensores-->	
+<!--	
   <gazebo reference="Rev3_r_1">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -1223,11 +1223,11 @@
       <jointName>Rev3_r_1</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev5_r_1">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -1236,11 +1236,11 @@
       <jointName>Rev5_r_1</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev8_r_1">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -1249,11 +1249,11 @@
       <jointName>Rev8_r_1</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev11_r_1">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -1262,6 +1262,7 @@
       <jointName>Rev11_r_1</jointName>
     </plugin>
   </gazebo>
+-->
   <!--lr: izda o dcha; num: n de pata-->
   <link name="Component1_r_2">
     <inertial>
@@ -1620,11 +1621,11 @@
     </actuator>
   </transmission>
   <!--Sensores-->
-  <!-- Enable the Joint Feedback -->
+	<!--
   <gazebo reference="Rev3_r_2">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -1633,11 +1634,11 @@
       <jointName>Rev3_r_2</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev5_r_2">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -1646,11 +1647,11 @@
       <jointName>Rev5_r_2</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev8_r_2">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -1659,11 +1660,11 @@
       <jointName>Rev8_r_2</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev11_r_2">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -1672,6 +1673,7 @@
       <jointName>Rev11_r_2</jointName>
     </plugin>
   </gazebo>
+-->
   <!--lr: izda o dcha; num: n de pata-->
   <link name="Component1_r_3">
     <inertial>
@@ -2030,11 +2032,11 @@
     </actuator>
   </transmission>
   <!--Sensores-->
-  <!-- Enable the Joint Feedback -->
+	<!--
   <gazebo reference="Rev3_r_3">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -2043,11 +2045,11 @@
       <jointName>Rev3_r_3</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev5_r_3">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -2056,11 +2058,11 @@
       <jointName>Rev5_r_3</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev8_r_3">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -2069,11 +2071,11 @@
       <jointName>Rev8_r_3</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev11_r_3">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -2082,6 +2084,7 @@
       <jointName>Rev11_r_3</jointName>
     </plugin>
   </gazebo>
+-->
   <!--lr: izda o dcha; num: n de pata-->
   <link name="Component1_l_1">
     <inertial>
@@ -2440,11 +2443,11 @@
     </actuator>
   </transmission>
   <!--Sensores-->
-  <!-- Enable the Joint Feedback -->
+	<!--
   <gazebo reference="Rev3_l_1">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -2453,11 +2456,11 @@
       <jointName>Rev3_l_1</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev5_l_1">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -2466,11 +2469,11 @@
       <jointName>Rev5_l_1</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev8_l_1">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -2479,11 +2482,11 @@
       <jointName>Rev8_l_1</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev11_l_1">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -2492,6 +2495,7 @@
       <jointName>Rev11_l_1</jointName>
     </plugin>
   </gazebo>
+-->
   <!--lr: izda o dcha; num: n de pata-->
   <link name="Component1_l_2">
     <inertial>
@@ -2850,11 +2854,11 @@
     </actuator>
   </transmission>
   <!--Sensores-->
-  <!-- Enable the Joint Feedback -->
+	<!--
   <gazebo reference="Rev3_l_2">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -2863,11 +2867,11 @@
       <jointName>Rev3_l_2</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev5_l_2">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -2876,11 +2880,11 @@
       <jointName>Rev5_l_2</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev8_l_2">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -2889,11 +2893,11 @@
       <jointName>Rev8_l_2</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev11_l_2">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -2902,6 +2906,7 @@
       <jointName>Rev11_l_2</jointName>
     </plugin>
   </gazebo>
+-->
   <!--lr: izda o dcha; num: n de pata-->
   <link name="Component1_l_3">
     <inertial>
@@ -3260,11 +3265,11 @@
     </actuator>
   </transmission>
   <!--Sensores-->
-  <!-- Enable the Joint Feedback -->
+	<!--
   <gazebo reference="Rev3_l_3">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -3273,11 +3278,11 @@
       <jointName>Rev3_l_3</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev5_l_3">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -3286,11 +3291,11 @@
       <jointName>Rev5_l_3</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev8_l_3">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -3299,11 +3304,11 @@
       <jointName>Rev8_l_3</jointName>
     </plugin>
   </gazebo>
-  <!-- Enable the Joint Feedback -->
+
   <gazebo reference="Rev11_l_3">
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <!-- The ft_sensor plugin -->
+
   <gazebo>
     <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
       <robotNamespace>/robominer</robotNamespace>
@@ -3312,4 +3317,5 @@
       <jointName>Rev11_l_3</jointName>
     </plugin>
   </gazebo>
+-->
 </robot>

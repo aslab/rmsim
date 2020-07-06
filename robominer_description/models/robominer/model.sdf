@@ -4142,6 +4142,7 @@
     <plugin name='control' filename='libgazebo_ros_control.so'>
       <robotNamespace>/robominer</robotNamespace>
     </plugin>
+	  <!--
     <plugin name='ft_sensor' filename='libgazebo_ros_ft_sensor.so'>
       <robotNamespace>/robominer</robotNamespace>
       <updateRate>100.0</updateRate>
@@ -4287,6 +4288,7 @@
       <topicName>Rev11_l_3_ft_sensor_topic</topicName>
       <jointName>Rev11_l_3</jointName>
     </plugin>
+	-->
   </model>
 </sdf>
 
