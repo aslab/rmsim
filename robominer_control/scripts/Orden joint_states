@@ -1,8 +1,0 @@
-$ rostopic echo robominer/joint_states
-
-
-
-name: [Rev11_l_1, Rev11_l_2, Rev11_l_3, Rev11_r_1, Rev11_r_2, Rev11_r_3, 
-       Rev3_l_1,  Rev3_l_2,  Rev3_l_3,  Rev3_r_1,  Rev3_r_2,  Rev3_r_3, 
-       Rev5_l_1,  Rev5_l_2,  Rev5_l_3,  Rev5_r_1,  Rev5_r_2,  Rev5_r_3, 
-       Rev8_l_1,  Rev8_l_2,  Rev8_l_3,  Rev8_r_1,  Rev8_r_2,  Rev8_r_3]
