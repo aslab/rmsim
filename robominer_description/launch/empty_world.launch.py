@@ -22,28 +22,37 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import ThisLaunchFileDir
-from launch.actions import ExecuteProcess
 from launch.substitutions import LaunchConfiguration
 
+from launch.actions import DeclareLaunchArgument
+from launch_ros.actions import Node
 
 def generate_launch_description():
-    use_sim_time = LaunchConfiguration('use_sim_time', default='True')
-    world_file_name = 'robominer.world'
-    world = os.path.join(get_package_share_directory('robominer_description'), 'worlds', world_file_name)
-    launch_file_dir = os.path.join(get_package_share_directory('robominer_description'), 'launch')
 
+    pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
+    pkg_robominer_description = get_package_share_directory('robominer_description')
+
+    # Gazebo launch
+    gazebo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(pkg_gazebo_ros, 'launch', 'gazebo.launch.py'),
+        )
+    )
+    
+    # Spawn robot
+    robot_spawner = Node(
+		package = 'gazebo_ros',
+		node_executable = 'spawn_entity.py',
+		arguments = ['-entity', 'robominer',
+			'-file', os.path.join(pkg_robominer_description, 'models/robominer/model.sdf')],
+		output = 'screen'
+	)
+	
     return LaunchDescription([
-        ExecuteProcess(
-            cmd=['gazebo', '--verbose', world, '-s', 'libgazebo_ros_init.so'],
-            output='screen'),
-
-        ExecuteProcess(
-            cmd=['ros2', 'param', 'set', '/gazebo', 'use_sim_time', use_sim_time],
-            output='screen'),
-
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([launch_file_dir, '/robot_state_publisher.launch.py']),
-            launch_arguments={'use_sim_time': use_sim_time}.items(),
-        ),
+        DeclareLaunchArgument(
+          'world',
+          default_value=[os.path.join(pkg_robominer_description, 'worlds', 'empty_world.world'), ''],
+          description='SDF world file'),
+        gazebo,
+        robot_spawner
     ])
