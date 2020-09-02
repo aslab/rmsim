@@ -1,0 +1,4 @@
+-Para lanzar la simulación: roslaunch robominer_description gazebo.launch
+-Para lanzar los controladores: roslaunch rm_custom_control controller.launch
+-Para lanzar la GUI: rosrun rqt_mypkg gui5.py
+-Para inyectar fallos introducir la letra deseada en la casilla correspondiente de la interfaz, tras consultar el desplegable que indica la correspondencia entre letras y fallos.
