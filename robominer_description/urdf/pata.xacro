@@ -294,8 +294,6 @@
     	</xacro:if>
 </joint>
 
-	<!--Tengo que probar si colocando la siguiente etiqueta en todas las joints evito las vibraciones-->
-<!--dynamics damping="0.7" friction="100.0" /-->	
 	
 <joint name="Rigid1_${lr}_${num}" type="fixed">
   <xacro:if value="${lr == 'r'}">
@@ -333,7 +331,7 @@
   <origin rpy="0 0 0" xyz="0.0235 -0.036 0.0"/>
   <parent link="Component5_${lr}_${num}"/>
   <child link="Component6_${lr}_${num}"/>
-  <axis xyz="-1.0 0.0 -0.0"/>
+  <axis xyz="1.0 0.0 -0.0"/>
   <dynamics damping=".1" friction="1.0" />
   <limit effort="100" lower="-1.919862" upper="1.919862" velocity="100"/>
 </joint>
@@ -354,7 +352,7 @@
   <origin rpy="0 0 0" xyz="-0.039 -0.0173 -0.04"/>
   <parent link="Component8_${lr}_${num}"/>
   <child link="Component9_${lr}_${num}"/>
-  <axis xyz="1.0 -0.0 0.0"/>
+  <axis xyz="1.0 0.0 0.0"/>
   <dynamics damping=".1" friction="1.0" />
   <limit effort="100" lower="-0.785398" upper="3.141593" velocity="100"/>
 </joint>
@@ -430,16 +428,16 @@
 	
 <!-- Enable the Joint Feedback -->
 <gazebo reference="Rev3_${lr}_${num}">
-<provideFeedback>true</provideFeedback>
+  <provideFeedback>true</provideFeedback>
 </gazebo>
 <!-- The ft_sensor plugin -->
 <gazebo>
-<plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
-  <robotNamespace>/robominer</robotNamespace>
-<updateRate>100.0</updateRate>
-<topicName>Rev3_${lr}_${num}_ft_sensor_topic</topicName>
-<jointName>Rev3_${lr}_${num}</jointName>
-</plugin>
+  <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+    <robotNamespace>/robominer</robotNamespace>
+	<updateRate>100.0</updateRate>
+	<topicName>Rev3_${lr}_${num}_ft_sensor_topic</topicName>
+	<jointName>Rev3_${lr}_${num}</jointName>
+  </plugin>
 </gazebo>	
 
 <!-- Enable the Joint Feedback -->

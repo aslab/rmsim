@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
+	
   <!-- We use a custom world for the rrbot so that the camera angle is launched correctly -->
 
   <world name="default">
@@ -11,14 +12,25 @@
     <include>
       <uri>model://sun</uri>
     </include>
-
-    <!-- Focus camera on tall pendulum -->
+	
+	<!--  
+    <include>
+	   <!--pose>13.387 12.889 6.345 0.073812 0.276254 -2.291363</pose>
+       <pose>2.6774 2.5778 1.269 0.073812 0.276254 -2.291363</pose>
+       <uri>model://camerapublisher</uri>
+	   <static>true</static>	
+    </include> 
+	-->
+		 
+    <!--plugin name="camera_publisher_plugin" filename="libcamera_publisher_plugin.so"/-->
+	  
+    <!-- Focus camera on tall pendulum 
     <gui fullscreen='0'>
       <camera name='user_camera'>
         <pose>4.927360 -4.376610 3.740080 0.000000 0.275643 2.356190</pose>
         <view_controller>orbit</view_controller>
       </camera>
     </gui>
-
+	-->
   </world>
 </sdf>

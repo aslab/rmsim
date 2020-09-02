@@ -5,9 +5,17 @@
 <robot name="robominer" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
 <xacro:property name="body_color" value="Gazebo/Silver" />
+<xacro:property name="right_colour" value="Gazebo/Green" />
+<xacro:property name="left_colour" value="Gazebo/Red" />
 
 <gazebo>
   <plugin filename="libgazebo_ros_control.so" name="control"> 
+      <robotNamespace>/robominer</robotNamespace>
+  </plugin> 
+</gazebo>	
+	
+<gazebo>
+  <plugin filename="librobominer_fault_injection_plugin.so" name="robominer_fault_injection_plugin"> 
       <robotNamespace>/robominer</robotNamespace>
   </plugin> 
 </gazebo>	
@@ -28,7 +36,7 @@
 	<!--Pata r1-->
 	
 <gazebo reference="Component1_r_1">
-  <material>${body_color}</material>
+  <material>${right_colour}</material>
   <implicitSpringDamper>true</implicitSpringDamper>
   <mu1>0.8</mu1>
   <mu2>0.8</mu2>
@@ -468,7 +476,7 @@
 	<!--Pata l1-->
 	
 <gazebo reference="Component1_l_1">
-  <material>${body_color}</material>
+  <material>${left_colour}</material>
   <implicitSpringDamper>true</implicitSpringDamper>
   <mu1>0.8</mu1>
   <mu2>0.8</mu2>

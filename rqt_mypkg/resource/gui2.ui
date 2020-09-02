@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>973</width>
+    <height>459</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Position GUI</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_rev3">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Rev3</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLabel" name="label_r1">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Pata r1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLabel" name="label_r2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Pata r2</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QLabel" name="label_r3">
+      <property name="text">
+       <string>Pata r3</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="4">
+     <widget class="QLabel" name="label_l1">
+      <property name="text">
+       <string>Pata l1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="5">
+     <widget class="QLabel" name="label_l2">
+      <property name="text">
+       <string>Pata l2</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="6">
+     <widget class="QLabel" name="label_l3">
+      <property name="text">
+       <string>Pata l3</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLCDNumber" name="lcdNumber_rev3_r1">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QLCDNumber" name="lcdNumber_rev3_r2"/>
+    </item>
+    <item row="4" column="3">
+     <widget class="QLCDNumber" name="lcdNumber_rev3_r3"/>
+    </item>
+    <item row="1" column="6">
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="5">
+     <widget class="QLabel" name="label_giro">
+      <property name="text">
+       <string>Nueva posición (º):</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4">
+     <widget class="QLCDNumber" name="lcdNumber_rev3_l1"/>
+    </item>
+    <item row="4" column="5">
+     <widget class="QLCDNumber" name="lcdNumber_rev3_l2"/>
+    </item>
+    <item row="4" column="6">
+     <widget class="QLCDNumber" name="lcdNumber_rev3_l3"/>
+    </item>
+    <item row="5" column="1">
+     <widget class="QLCDNumber" name="lcdNumber_rev5_r1">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="2">
+     <widget class="QLCDNumber" name="lcdNumber_rev5_r2"/>
+    </item>
+    <item row="5" column="3">
+     <widget class="QLCDNumber" name="lcdNumber_rev5_r3"/>
+    </item>
+    <item row="5" column="4">
+     <widget class="QLCDNumber" name="lcdNumber_rev5_l1"/>
+    </item>
+    <item row="5" column="5">
+     <widget class="QLCDNumber" name="lcdNumber_rev5_l2"/>
+    </item>
+    <item row="5" column="6">
+     <widget class="QLCDNumber" name="lcdNumber_rev5_l3"/>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLCDNumber" name="lcdNumber_rev8_r1">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QLCDNumber" name="lcdNumber_rev8_r2"/>
+    </item>
+    <item row="6" column="3">
+     <widget class="QLCDNumber" name="lcdNumber_rev8_r3"/>
+    </item>
+    <item row="6" column="4">
+     <widget class="QLCDNumber" name="lcdNumber_rev8_l1"/>
+    </item>
+    <item row="6" column="5">
+     <widget class="QLCDNumber" name="lcdNumber_rev8_l2"/>
+    </item>
+    <item row="6" column="6">
+     <widget class="QLCDNumber" name="lcdNumber_rev8_l3"/>
+    </item>
+    <item row="7" column="1">
+     <widget class="QLCDNumber" name="lcdNumber_rev11_r1">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2">
+     <widget class="QLCDNumber" name="lcdNumber_rev11_r2"/>
+    </item>
+    <item row="7" column="3">
+     <widget class="QLCDNumber" name="lcdNumber_rev11_r3"/>
+    </item>
+    <item row="7" column="4">
+     <widget class="QLCDNumber" name="lcdNumber_rev11_l1"/>
+    </item>
+    <item row="7" column="5">
+     <widget class="QLCDNumber" name="lcdNumber_rev11_l2"/>
+    </item>
+    <item row="7" column="6">
+     <widget class="QLCDNumber" name="lcdNumber_rev11_l3"/>
+    </item>
+    <item row="0" column="6">
+     <widget class="QComboBox" name="comboBox_art">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <item>
+       <property name="text">
+        <string>Elija articulación</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Rev3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Rev5</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Rev8</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Rev11</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="0" column="1" rowspan="2" colspan="2">
+     <widget class="QPushButton" name="pushButton_en_pie">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Iniciar movimiento</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_rev5">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Rev5</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_rev8">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Rev8</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_rev11">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Rev11</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <widget class="QComboBox" name="comboBox_pata">
+      <item>
+       <property name="text">
+        <string>Elija pata</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pata r1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pata r2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pata r3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pata l1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pata l2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pata l3</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="2" column="2" colspan="4">
+     <widget class="QLabel" name="label_tit">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>70</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Ángulo de cada articulación en grados</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="6">
+     <widget class="QLabel" name="label_limits">
+      <property name="text">
+       <string>Rango:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+ <slots>
+  <slot>en_pie_slot()</slot>
+  <slot>rev3_r1_slot()</slot>
+  <slot>rev3_r2_slot()</slot>
+  <slot>rev3_r3_slot()</slot>
+  <slot>rev3_l1_slot()</slot>
+  <slot>rev3_l2_slot()</slot>
+  <slot>rev3_l3_slot()</slot>
+  <slot>rev5_r1_slot()</slot>
+  <slot>rev5_r2_slot()</slot>
+  <slot>rev5_r3_slot()</slot>
+  <slot>rev5_l1_slot()</slot>
+  <slot>rev5_l2_slot()</slot>
+  <slot>rev5_l3_slot()</slot>
+  <slot>rev8_r1_slot()</slot>
+  <slot>rev8_r2_slot()</slot>
+  <slot>rev8_r3_slot()</slot>
+  <slot>rev8_l1_slot()</slot>
+  <slot>rev8_l2_slot()</slot>
+  <slot>rev8_l3_slot()</slot>
+  <slot>rev11_r1_slot()</slot>
+  <slot>rev11_r2_slot()</slot>
+  <slot>rev11_r3_slot()</slot>
+  <slot>rev11_l1_slot()</slot>
+  <slot>rev11_l2_slot()</slot>
+  <slot>rev11_l3_slot()</slot>
+  <slot>pos_listener_slot()</slot>
+ </slots>
+</ui>

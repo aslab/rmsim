@@ -16,11 +16,11 @@
   Rev5_r_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev5_r_1
-    pid: {p: 100.0, i: 0.01, d: 1.0}
+    pid: {p: 500.0, i: 0.01, d: 1.0}
   Rev8_r_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev8_r_1
-    pid: {p: 100.0, i: 0.01, d: 1.0}
+    pid: {p: 500.0, i: 0.01, d: 1.0}
   Rev11_r_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev11_r_1
@@ -35,11 +35,11 @@
   Rev5_r_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev5_r_2
-    pid: {p: 100.0, i: 0.01, d: 1.0}
+    pid: {p: 500.0, i: 0.01, d: 1.0}
   Rev8_r_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev8_r_2
-    pid: {p: 100.0, i: 0.01, d: 1.0}
+    pid: {p: 500.0, i: 0.01, d: 1.0}
   Rev11_r_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev11_r_2
@@ -54,11 +54,11 @@
   Rev5_r_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev5_r_3
-    pid: {p: 100.0, i: 0.01, d: 1.0}
+    pid: {p: 500.0, i: 0.01, d: 1.0}
   Rev8_r_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev8_r_3
-    pid: {p: 100.0, i: 0.01, d: 1.0}
+    pid: {p: 500.0, i: 0.01, d: 1.0}
   Rev11_r_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev11_r_3
@@ -73,11 +73,11 @@
   Rev5_l_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev5_l_1
-    pid: {p: 100.0, i: 0.01, d: 1.0}
+    pid: {p: 500.0, i: 0.01, d: 1.0}
   Rev8_l_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev8_l_1
-    pid: {p: 100.0, i: 0.01, d: 1.0}
+    pid: {p: 500.0, i: 0.01, d: 1.0}
   Rev11_l_1_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev11_l_1
@@ -92,11 +92,11 @@
   Rev5_l_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev5_l_2
-    pid: {p: 100.0, i: 0.01, d: 1.0}
+    pid: {p: 500.0, i: 0.01, d: 1.0}
   Rev8_l_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev8_l_2
-    pid: {p: 100.0, i: 0.01, d: 1.0}
+    pid: {p: 500.0, i: 0.01, d: 1.0}
   Rev11_l_2_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev11_l_2
@@ -111,11 +111,11 @@
   Rev5_l_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev5_l_3
-    pid: {p: 100.0, i: 0.01, d: 1.0}
+    pid: {p: 500.0, i: 0.01, d: 1.0}
   Rev8_l_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev8_l_3
-    pid: {p: 100.0, i: 0.01, d: 1.0}
+    pid: {p: 500.0, i: 0.01, d: 1.0}
   Rev11_l_3_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev11_l_3

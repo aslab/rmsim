@@ -2,7 +2,7 @@
 # license removed for brevity
 import rospy
 from std_msgs.msg import Float64
-import math
+from math import pi
 
 
 def talker():
@@ -29,37 +29,38 @@ def talker():
     ]
     
     rospy.init_node('robominer_joint_command_talker', anonymous=True)
+    #rospy.init_node('robominer_joint_command_talker', anonymous=False)
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
             
         pos = [
             #Pata r1
-            [math.pi/4, -math.pi/4, math.pi/4, 0],
+            [pi/4, pi/4, pi/4, 0],
             #Pata r2
-            [0, -math.pi/4, math.pi/4, 0],
+            [0, pi/4, pi/4, 0],
             #Pata r3
-            [-math.pi/4, -math.pi/4, math.pi/4, 0],
+            [-pi/4, pi/4, pi/4, 0],
             #Pata l1
-            [-math.pi/4, -math.pi/4, math.pi/4, 0],
+            [-pi/4, pi/4, pi/4, 0],
             #Pata l2
-            [0, -math.pi/4, math.pi/4, 0],
+            [0, pi/4, pi/4, 0],
             #Pata l3
-            [math.pi/4, -math.pi/4, math.pi/4, 0]
+            [pi/4, pi/4, pi/4, 0]
         ]
         
 #        pos = [
             #Pata r1
-#            [0, 0, 0, math.pi],
+#            [0, 0, 0, pi],
             #Pata r2
-#            [0, 0, 0, math.pi/2],
+#            [0, 0, 0, pi/2],
             #Pata r3
-#            [0, 0, 0, math.pi/2],
+#            [0, 0, 0, pi/2],
             #Pata l1
-#            [0, 0, 0, math.pi/2],
+#            [0, 0, 0, pi/2],
             #Pata l2
-#            [0, 0, 0, math.pi/2],
+#            [0, 0, 0, pi/2],
             #Pata l3
-#            [0, 0, 0, math.pi/2]
+#            [0, 0, 0, pi/2]
 #        ]
         
         rospy.loginfo(pos)
@@ -93,8 +94,9 @@ def talker():
         pub[5][1].publish(pos[5][1])
         pub[5][2].publish(pos[5][2])
         pub[5][3].publish(pos[5][3])
+        
         rate.sleep()
-
+        
 if __name__ == '__main__':
     try:
         talker()

@@ -1,0 +1,26 @@
+<class_libraries>
+<library path="lib/librm_controller">
+  <class name="rm_controller/RMJointPositionController" 
+		 type="rm_controller_ns::RMJointPositionController" 
+		 base_class_type="controller_interface::ControllerBase"/>
+  </library>
+
+  <library path="lib/librm_biased_controller">
+  <class name="rm_biased_controller/RMJointPositionController" 
+		 type="rm_biased_controller_ns::RMJointPositionController" 
+		 base_class_type="controller_interface::ControllerBase"/>
+  </library>
+</class_libraries>
+
+<!--
+
+<library path="lib/librm_controller">
+  <class name="rm_controller/RMJointPositionController" 
+		 type="rm_controller_ns::RMJointPositionController" 
+		 base_class_type="controller_interface::ControllerBase"/>
+  <class name="rm_biased_controller/RMJointPositionController" 
+		 type="rm_biased_controller_ns::RMJointPositionController" 
+		 base_class_type="controller_interface::ControllerBase"/>
+</library>
+
+-->

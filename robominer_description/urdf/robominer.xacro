@@ -2,7 +2,7 @@
 <robot name="robominer" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:include filename="$(find robominer_description)/urdf/materials.xacro" />
-<xacro:include filename="$(find robominer_description)/urdf/macros.xacro" />
+<!--xacro:include filename="$(find robominer_description)/urdf/macros.xacro" /-->
 <xacro:include filename="$(find robominer_description)/urdf/pata.xacro" />
 <xacro:include filename="$(find robominer_description)/urdf/cuerpo.xacro" />
 <!--xacro:include filename="$(find robominer_description)/urdf/robominer.gazebo"/-->
@@ -23,5 +23,5 @@
 <xacro:pata lr="l" num="1"/>
 <xacro:pata lr="l" num="2"/>
 <xacro:pata lr="l" num="3"/>
-
+	
 </robot>
