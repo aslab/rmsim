@@ -242,6 +242,7 @@
   <inertial>
     <origin rpy="0 0 0" xyz="-0.03612166848566285 -0.03816330247780275 -3.670740474915864e-07"/>
     <mass value="0.4300735435640777"/>
+    <!--mass value="2"/-->
     <inertia ixx="0.000136" ixy="0.0" ixz="0.0" iyy="0.000245" iyz="0.0" izz="0.000199"/>
   </inertial>
   <visual>
@@ -318,7 +319,8 @@
   <child link="Component4_${lr}_${num}"/>
   <axis xyz="-0.0 -0.0 1.0"/>
   <dynamics damping=".1" friction="1.0" />	
-  <limit effort="100" lower="-1.919862" upper="1.919862" velocity="100"/>
+  <limit effort="100" lower="-1.919862" upper="1.919862" velocity=".75"/>
+  <!--safety_controller soft_lower_limit="-1.919862" soft_upper_limit="1.919862" k_velocity="1" /-->
 </joint>
 
 <joint name="Rigid4_${lr}_${num}" type="fixed">
@@ -333,7 +335,8 @@
   <child link="Component6_${lr}_${num}"/>
   <axis xyz="1.0 0.0 -0.0"/>
   <dynamics damping=".1" friction="1.0" />
-  <limit effort="100" lower="-1.919862" upper="1.919862" velocity="100"/>
+  <limit effort="100" lower="-1.919862" upper="1.919862" velocity=".75"/>
+  <!--safety_controller soft_lower_limit="-1.919862" soft_upper_limit="1.919862" k_velocity="1" /-->
 </joint>
 
 <joint name="Rigid6_${lr}_${num}" type="fixed">
@@ -354,7 +357,8 @@
   <child link="Component9_${lr}_${num}"/>
   <axis xyz="1.0 0.0 0.0"/>
   <dynamics damping=".1" friction="1.0" />
-  <limit effort="100" lower="-0.785398" upper="3.141593" velocity="100"/>
+  <limit effort="100" lower="-0.785398" upper="3.141593" velocity=".75"/>
+  <!--safety_controller soft_lower_limit="-0.785398" soft_upper_limit="3.141593" k_velocity="1" /-->
 </joint>
 
 <joint name="Rigid9_${lr}_${num}" type="fixed">
@@ -375,7 +379,8 @@
   <child link="Component12_${lr}_${num}"/>
   <axis xyz="1.0 -0.0 0.0"/>
   <dynamics damping=".1" friction="1.0" />
-  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+  <limit effort="100" lower="-1.570796" upper="1.570796" velocity=".75"/>
+  <!--safety_controller soft_lower_limit="-1.570796" soft_upper_limit="1.570796" k_velocity="1" /-->
 </joint>
 	
 	<!--Transmisiones-->

@@ -34,7 +34,7 @@ class RobominerFaultInjection : public ModelPlugin
 	    physics::ModelPtr model;
 		physics::JointPtr joint;
 		ros::NodeHandle nh_;
-		ros::ServiceServer drop_leg_service;
+		ros::ServiceServer drop_joint_service;
 		ros::ServiceServer lock_joint_service;
 		
 	public:
@@ -53,7 +53,7 @@ class RobominerFaultInjection : public ModelPlugin
 			ROS_WARN("Plugin robominer_fault_injection iniciado");
 
 			this->model = _parent;
-			this->drop_leg_service = this->nh_.advertiseService("drop_leg", &RobominerFaultInjection::DetachJoint, this);	  
+			this->drop_joint_service = this->nh_.advertiseService("drop_joint", &RobominerFaultInjection::DetachJoint, this);	  
 			this->lock_joint_service = this->nh_.advertiseService("lock_joint", &RobominerFaultInjection::LockJoint, this);	  
 		}	
 		

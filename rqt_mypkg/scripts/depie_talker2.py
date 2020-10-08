@@ -79,7 +79,7 @@ class depie_talker(QObject):
 
             for x in range(10):
 
-                rospy.loginfo(pos)
+                #rospy.loginfo(pos)
                 # Pata r1
                 pub1[0][0].publish(pos[0][0])
                 pub1[0][1].publish(pos[0][1])
@@ -162,7 +162,7 @@ class depie_talker(QObject):
 
             for x in range(10):
 
-                rospy.loginfo(pos)
+                #rospy.loginfo(pos)
                 # Pata r1
                 pub1[0][0].publish(pos[0][0])
                 pub1[0][1].publish(pos[0][1])
@@ -244,7 +244,7 @@ class depie_talker(QObject):
 
             for x in range(10):
 
-                rospy.loginfo(pos)
+                #rospy.loginfo(pos)
                 # Pata r1
                 pub1[0][0].publish(pos[0][0])
                 pub1[0][1].publish(pos[0][1])

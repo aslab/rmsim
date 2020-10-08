@@ -138,7 +138,7 @@ class set_pos(QObject):
 
             for x in range(10):
 
-                rospy.loginfo(ang_rad)
+                #rospy.loginfo(ang_rad)
 
                 pub1[i][j].publish(ang_rad)
                 pub2[i][j].publish(ang_rad)

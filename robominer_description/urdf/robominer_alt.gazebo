@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
 
-<!--Archivo alternartivo con el que trataba de reducir el tembleque (sin exito)-->
 
 <robot name="robominer" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
 <xacro:property name="body_color" value="Gazebo/Silver" />
 <xacro:property name="right_colour" value="Gazebo/Green" />
 <xacro:property name="left_colour" value="Gazebo/Red" />
+<xacro:property name="black" value="Gazebo/Black" />
 
 <gazebo>
   <plugin filename="libgazebo_ros_control.so" name="control"> 
@@ -19,6 +19,22 @@
       <robotNamespace>/robominer</robotNamespace>
   </plugin> 
 </gazebo>	
+		
+	<!--Logo Robominers-->	
+<gazebo reference="logo1">
+  <material>${left_colour}</material>
+  <selfCollide>true</selfCollide>
+</gazebo>
+	
+<gazebo reference="logo2">
+  <material>${black}</material>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="ladrilloslogo">
+  <material>${left_colour}</material>
+  <selfCollide>true</selfCollide>
+</gazebo>
 	
 <gazebo reference="cuerpo">
   <material>${body_color}</material>
@@ -32,11 +48,11 @@
   <selfCollide>true</selfCollide>
   <gravity>true</gravity>
 </gazebo>
-
+	
 	<!--Pata r1-->
 	
 <gazebo reference="Component1_r_1">
-  <material>${right_colour}</material>
+  <material>${body_color}</material>
   <implicitSpringDamper>true</implicitSpringDamper>
   <mu1>0.8</mu1>
   <mu2>0.8</mu2>
@@ -170,8 +186,8 @@
 <gazebo reference="Component12_r_1">
   <material>${body_color}</material>
   <implicitSpringDamper>true</implicitSpringDamper>
-  <mu1>0.8</mu1>
-  <mu2>0.8</mu2>
+  <mu1>1.8</mu1>
+  <mu2>1.8</mu2>
   <kp>1000000.0</kp>
   <kd>1.0</kd>
   <maxVel>0</maxVel>
@@ -317,8 +333,8 @@
 <gazebo reference="Component12_r_2">
   <material>${body_color}</material>
   <implicitSpringDamper>true</implicitSpringDamper>
-  <mu1>0.8</mu1>
-  <mu2>0.8</mu2>
+  <mu1>1.8</mu1>
+  <mu2>1.8</mu2>
   <kp>1000000.0</kp>
   <kd>1.0</kd>
   <maxVel>0</maxVel>
@@ -464,8 +480,8 @@
 <gazebo reference="Component12_r_3">
   <material>${body_color}</material>
   <implicitSpringDamper>true</implicitSpringDamper>
-  <mu1>0.8</mu1>
-  <mu2>0.8</mu2>
+  <mu1>1.8</mu1>
+  <mu2>1.8</mu2>
   <kp>1000000.0</kp>
   <kd>1.0</kd>
   <maxVel>0</maxVel>
@@ -476,7 +492,7 @@
 	<!--Pata l1-->
 	
 <gazebo reference="Component1_l_1">
-  <material>${left_colour}</material>
+  <material>${body_color}</material>
   <implicitSpringDamper>true</implicitSpringDamper>
   <mu1>0.8</mu1>
   <mu2>0.8</mu2>
@@ -610,8 +626,8 @@
 <gazebo reference="Component12_l_1">
   <material>${body_color}</material>
   <implicitSpringDamper>true</implicitSpringDamper>
-  <mu1>0.8</mu1>
-  <mu2>0.8</mu2>
+  <mu1>1.8</mu1>
+  <mu2>1.8</mu2>
   <kp>1000000.0</kp>
   <kd>1.0</kd>
   <maxVel>0</maxVel>
@@ -756,8 +772,8 @@
 <gazebo reference="Component12_l_2">
   <material>${body_color}</material>
   <implicitSpringDamper>true</implicitSpringDamper>
-  <mu1>0.8</mu1>
-  <mu2>0.8</mu2>
+  <mu1>1.8</mu1>
+  <mu2>1.8</mu2>
   <kp>1000000.0</kp>
   <kd>1.0</kd>
   <maxVel>0</maxVel>
@@ -902,8 +918,8 @@
 <gazebo reference="Component12_l_3">
   <material>${body_color}</material>
   <implicitSpringDamper>true</implicitSpringDamper>
-  <mu1>0.8</mu1>
-  <mu2>0.8</mu2>
+  <mu1>1.8</mu1>
+  <mu2>1.8</mu2>
   <kp>1000000.0</kp>
   <kd>1.0</kd>
   <maxVel>0</maxVel>

@@ -5,4 +5,8 @@
   <color rgba="0.700 0.700 0.700 1.000"/>
 </material>
 
+<material name="logored">
+  <color rgba="0.83 0.38 0.36 1.000"/>
+</material>
+
 </robot>
