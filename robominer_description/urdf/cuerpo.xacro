@@ -1,33 +1,85 @@
 <?xml version="1.0" ?>
 <robot name="cuerpo" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
 	
-  <link name="cuerpo">
-    <inertial>
-      <origin rpy="0 0 0" xyz="1.2607010642475455e-06 -1.9705023201073385e-17 0.030000000000039998"/>
-      <mass value="2"/>
-      <inertia ixx="0.155393" ixy="-0.0" ixz="-0.0" iyy="0.159826" iyz="-0.0" izz="0.297615"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://robominer_description/meshes/cuerpo.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-       <material name="silver"/>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://robominer_description/meshes/cuerpo.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
-  </link>
+<link name="cuerpo">
+  <inertial>
+	<origin rpy="0 0 0" xyz="1.2607010642475455e-06 -1.9705023201073385e-17 0.030000000000039998"/>
+	<!--mass value="28.985638173838137"/-->
+	<mass value="10"/>
+	<!--mass value="2"/-->
+	<inertia ixx="0.155393" ixy="-0.0" ixz="-0.0" iyy="0.159826" iyz="-0.0" izz="0.297615"/>
+  </inertial>
+  <visual>
+	<origin rpy="0 0 0" xyz="0 0 0"/>
+	<geometry>
+	  <mesh filename="package://robominer_description/meshes/cuerpo.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="silver"/>
+  </visual>
+  <collision>
+	<origin rpy="0 0 0" xyz="0 0 0"/>
+	<geometry>
+	  <mesh filename="package://robominer_description/meshes/cuerpo.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+  </collision>
+</link>
+
+<link name="logo1">
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robominer_description/meshes/logo1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="logored"/>
+  </visual>
+</link>
+
+<link name="logo2">
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robominer_description/meshes/logo2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="white"/>
+  </visual>
+</link>
+
+<link name="ladrilloslogo">
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://robominer_description/meshes/ladrilloslogo.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="logored"/>
+  </visual>
+</link>
+
+<joint name="cuerpo_logo1" type="fixed">
+	<origin rpy="0 0 0.5236" xyz="-0.006 0.105 0.0551"/>
+	<parent link="cuerpo"/>
+	<child link="logo1"/>
+</joint>
 	
-  <xacro:macro name="body" params="parent child">
-    <joint name="fixed" type="fixed">
-      <origin rpy="0 0 0" xyz="0 0 0.1"/>
-      <parent link="${parent}"/>
-      <child link="${child}"/>
-    </joint>
-  </xacro:macro>
+<joint name="cuerpo_logo2" type="fixed">
+	<origin rpy="0 0 -1.5707" xyz="0.08 0.125 0.0552"/>
+	<parent link="cuerpo"/>
+	<child link="logo2"/>
+</joint>
+	
+<joint name="cuerpo_ladrillos" type="fixed">
+	<origin rpy="0 0 -1.5707" xyz="0.08 0.125 0.0551"/>
+	<parent link="cuerpo"/>
+	<child link="ladrilloslogo"/>
+</joint>
+
+	
+<xacro:macro name="body" params="parent child">
+	<joint name="fixed" type="fixed">
+		<origin rpy="0 0 0" xyz="0 0 0.1"/>
+		<parent link="${parent}"/>
+		<child link="${child}"/>
+	</joint>
+</xacro:macro>
 	
 </robot>
