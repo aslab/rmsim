@@ -1783,7 +1783,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
             pos = int(self.lineEdit_rev11_r1.text())
-            if (pos >= -45 and pos <= 180):
+            if (pos >= -90 and pos <= 90):
                 self.msg.emit("Pata r1", "Rev11", pos)
                 self.lineEdit_rev11_r1.clear()
 
@@ -1845,7 +1845,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
             pos = int(self.lineEdit_rev11_r2.text())
-            if (pos >= -45 and pos <= 180):
+            if (pos >= -90 and pos <= 90):
                 self.msg.emit("Pata r2", "Rev11", pos)
                 self.lineEdit_rev11_r2.clear()
 
@@ -1907,7 +1907,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
             pos = int(self.lineEdit_rev11_r3.text())
-            if (pos >= -45 and pos <= 180):
+            if (pos >= -90 and pos <= 90):
                 self.msg.emit("Pata r3", "Rev11", pos)
                 self.lineEdit_rev11_r3.clear()
 
@@ -1969,7 +1969,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
             pos = int(self.lineEdit_rev11_l1.text())
-            if (pos >= -45 and pos <= 180):
+            if (pos >= -90 and pos <= 90):
                 self.msg.emit("Pata l1", "Rev11", pos)
                 self.lineEdit_rev11_l1.clear()
 
@@ -2031,7 +2031,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
             pos = int(self.lineEdit_rev11_l2.text())
-            if (pos >= -45 and pos <= 180):
+            if (pos >= -90 and pos <= 90):
                 self.msg.emit("Pata l2", "Rev11", pos)
                 self.lineEdit_rev11_l2.clear()
 
@@ -2093,8 +2093,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
 
-            pos = int(self.lineEdit_rev113.text())
-            if (pos >= -45 and pos <= 180):
+            pos = int(self.lineEdit_rev11_l3.text())
+            if (pos >= -90 and pos <= 90):
                 self.msg.emit("Pata l3", "Rev11", pos)
                 self.lineEdit_rev11_l3.clear()
 
