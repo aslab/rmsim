@@ -73,12 +73,16 @@ client_Rev11_l_1_biased = dynamic_reconfigure.client.Client("/robominer/Rev11_l_
 client_Rev11_l_2_biased = dynamic_reconfigure.client.Client("/robominer/Rev11_l_2_biased_position_controller/pid")
 client_Rev11_l_3_biased = dynamic_reconfigure.client.Client("/robominer/Rev11_l_3_biased_position_controller/pid")
 
+#Canal predeterminado
+canal = 'Ángulo'
+
 #Fallos sensores
 sensor_flags = np.zeros(24)
-canal = 'Ángulo'
+fallo_sens = False
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     msg = pyqtSignal(str, str, int)
+
 
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
@@ -2136,7 +2140,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def set_canal(self, text):
         for i, val in enumerate(sensor_flags):
-            sensor_flags[i] = val * 0
+            if sensor_flags[i] != 0:
+                fallo_sens = True
+                sensor_flags[i] = 0
+        if fallo_sens:
+            self.plainTextEdit_reg_fallos.appendPlainText("Sensores reiniciados")
+            fallo_sens = False
+
         try:
             self.pos.msg.disconnect(self.updateLCD)
         except Exception:
