@@ -73,16 +73,16 @@ client_Rev11_l_1_biased = dynamic_reconfigure.client.Client("/robominer/Rev11_l_
 client_Rev11_l_2_biased = dynamic_reconfigure.client.Client("/robominer/Rev11_l_2_biased_position_controller/pid")
 client_Rev11_l_3_biased = dynamic_reconfigure.client.Client("/robominer/Rev11_l_3_biased_position_controller/pid")
 
-#Canal predeterminado
-canal = 'Ángulo'
-
-#Fallos sensores
-sensor_flags = np.zeros(24)
-fallo_sens = False
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     msg = pyqtSignal(str, str, int)
 
+    # Canal predeterminado
+    canal = 'Ángulo'
+
+    # Fallos sensores
+    sensor_flags = np.zeros(24)
+    fallo_sens = False
 
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
@@ -156,364 +156,364 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                   value11, value12, value13, value14, value15, value16, value17, value18, value19, value20, value21,
                   value22, value23):
 
-        if sensor_flags[0] == 0:
+        if self.sensor_flags[0] == 0:
             self.lcdNumber_rev3_r1.display(value9)
-        elif sensor_flags[0] == 1:
+        elif self.sensor_flags[0] == 1:
             self.lcdNumber_rev3_r1.display(0)
-        elif sensor_flags[0] == 2:
+        elif self.sensor_flags[0] == 2:
             pass
-        elif sensor_flags[0] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[0] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev3_r1.display(value9 + 10)
-        elif sensor_flags[0] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[0] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev3_r1.display(value9 + 0.5)
-        elif sensor_flags[0] == 3 and canal == 'Par':
+        elif self.sensor_flags[0] == 3 and self.canal == 'Par':
             self.lcdNumber_rev3_r1.display(value9 + 2)
-        elif sensor_flags[0] == 4:
+        elif self.sensor_flags[0] == 4:
             self.lcdNumber_rev3_r1.display(round(value9 * 1.2))
 
-        if sensor_flags[1] == 0:
+        if self.sensor_flags[1] == 0:
             self.lcdNumber_rev3_r2.display(value10)
-        elif sensor_flags[1] == 1:
+        elif self.sensor_flags[1] == 1:
             self.lcdNumber_rev3_r2.display(0)
-        elif sensor_flags[1] == 2:
+        elif self.sensor_flags[1] == 2:
             pass
-        elif sensor_flags[1] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[1] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev3_r2.display(value10 + 10)
-        elif sensor_flags[1] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[1] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev3_r2.display(value10 + 0.5)
-        elif sensor_flags[1] == 3 and canal == 'Par':
+        elif self.sensor_flags[1] == 3 and self.canal == 'Par':
             self.lcdNumber_rev3_r2.display(value10 + 2)
-        elif sensor_flags[1] == 4:
+        elif self.sensor_flags[1] == 4:
             self.lcdNumber_rev3_r2.display(round(value10 * 1.2))
 
-        if sensor_flags[2] == 0:
+        if self.sensor_flags[2] == 0:
             self.lcdNumber_rev3_r3.display(value11)
-        elif sensor_flags[2] == 1:
+        elif self.sensor_flags[2] == 1:
             self.lcdNumber_rev3_r3.display(0)
-        elif sensor_flags[2] == 2:
+        elif self.sensor_flags[2] == 2:
             pass
-        elif sensor_flags[2] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[2] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev3_r3.display(value11 + 10)
-        elif sensor_flags[2] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[2] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev3_r3.display(value11 + 0.5)
-        elif sensor_flags[2] == 3 and canal == 'Par':
+        elif self.sensor_flags[2] == 3 and self.canal == 'Par':
             self.lcdNumber_rev3_r3.display(value11 + 2)
-        elif sensor_flags[2] == 4:
+        elif self.sensor_flags[2] == 4:
             self.lcdNumber_rev3_r3.display(round(value11 * 1.2))
 
-        if sensor_flags[3] == 0:
+        if self.sensor_flags[3] == 0:
             self.lcdNumber_rev3_l1.display(value6)
-        elif sensor_flags[3] == 1:
+        elif self.sensor_flags[3] == 1:
             self.lcdNumber_rev3_l1.display(0)
-        elif sensor_flags[3] == 2:
+        elif self.sensor_flags[3] == 2:
             pass
-        elif sensor_flags[3] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[3] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev3_l1.display(value6 + 10)
-        elif sensor_flags[3] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[3] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev3_l1.display(value6 + 0.5)
-        elif sensor_flags[3] == 3 and canal == 'Par':
+        elif self.sensor_flags[3] == 3 and self.canal == 'Par':
             self.lcdNumber_rev3_l1.display(value6 + 2)
-        elif sensor_flags[3] == 4:
+        elif self.sensor_flags[3] == 4:
             self.lcdNumber_rev3_l1.display(round(value6 * 1.2))
 
-        if sensor_flags[4] == 0:
+        if self.sensor_flags[4] == 0:
             self.lcdNumber_rev3_l2.display(value7)
-        elif sensor_flags[4] == 1:
+        elif self.sensor_flags[4] == 1:
             self.lcdNumber_rev3_l2.display(0)
-        elif sensor_flags[4] == 2:
+        elif self.sensor_flags[4] == 2:
             pass
-        elif sensor_flags[4] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[4] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev3_l2.display(value7 + 10)
-        elif sensor_flags[4] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[4] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev3_l2.display(value7 + 0.5)
-        elif sensor_flags[4] == 3 and canal == 'Par':
+        elif self.sensor_flags[4] == 3 and self.canal == 'Par':
             self.lcdNumber_rev3_l2.display(value7 + 2)
-        elif sensor_flags[4] == 4:
+        elif self.sensor_flags[4] == 4:
             self.lcdNumber_rev3_l2.display(round(value7 * 1.2))
 
-        if sensor_flags[5] == 0:
+        if self.sensor_flags[5] == 0:
             self.lcdNumber_rev3_l3.display(value8)
-        elif sensor_flags[5] == 1:
+        elif self.sensor_flags[5] == 1:
             self.lcdNumber_rev3_l3.display(0)
-        elif sensor_flags[5] == 2:
+        elif self.sensor_flags[5] == 2:
             pass
-        elif sensor_flags[5] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[5] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev3_l3.display(value8 + 10)
-        elif sensor_flags[5] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[5] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev3_l3.display(value8 + 0.5)
-        elif sensor_flags[5] == 3 and canal == 'Par':
+        elif self.sensor_flags[5] == 3 and self.canal == 'Par':
             self.lcdNumber_rev3_l3.display(value8 + 2)
-        elif sensor_flags[5] == 4:
+        elif self.sensor_flags[5] == 4:
             self.lcdNumber_rev3_l3.display(round(value8 * 1.2))
 
-        if sensor_flags[6] == 0:
+        if self.sensor_flags[6] == 0:
             self.lcdNumber_rev5_r1.display(value15)
-        elif sensor_flags[6] == 1:
+        elif self.sensor_flags[6] == 1:
             self.lcdNumber_rev5_r1.display(0)
-        elif sensor_flags[6] == 2:
+        elif self.sensor_flags[6] == 2:
             pass
-        elif sensor_flags[6] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[6] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev5_r1.display(value15 + 10)
-        elif sensor_flags[6] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[6] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev5_r1.display(value15 + 0.5)
-        elif sensor_flags[6] == 3 and canal == 'Par':
+        elif self.sensor_flags[6] == 3 and self.canal == 'Par':
             self.lcdNumber_rev5_r1.display(value15 + 2)
-        elif sensor_flags[6] == 4:
+        elif self.sensor_flags[6] == 4:
             self.lcdNumber_rev5_r1.display(round(value15 * 1.2))
 
-        if sensor_flags[7] == 0:
+        if self.sensor_flags[7] == 0:
             self.lcdNumber_rev5_r2.display(value16)
-        elif sensor_flags[7] == 1:
+        elif self.sensor_flags[7] == 1:
             self.lcdNumber_rev5_r2.display(0)
-        elif sensor_flags[7] == 2:
+        elif self.sensor_flags[7] == 2:
             pass
-        elif sensor_flags[7] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[7] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev5_r2.display(value16 + 10)
-        elif sensor_flags[7] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[7] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev5_r2.display(value16 + 0.5)
-        elif sensor_flags[7] == 3 and canal == 'Par':
+        elif self.sensor_flags[7] == 3 and self.canal == 'Par':
             self.lcdNumber_rev5_r2.display(value16 + 2)
-        elif sensor_flags[7] == 4:
+        elif self.sensor_flags[7] == 4:
             self.lcdNumber_rev5_r2.display(round(value16 * 1.2))
 
-        if sensor_flags[8] == 0:
+        if self.sensor_flags[8] == 0:
             self.lcdNumber_rev5_r3.display(value17)
-        elif sensor_flags[8] == 1:
+        elif self.sensor_flags[8] == 1:
             self.lcdNumber_rev5_r3.display(0)
-        elif sensor_flags[8] == 2:
+        elif self.sensor_flags[8] == 2:
             pass
-        elif sensor_flags[8] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[8] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev5_r3.display(value17 + 10)
-        elif sensor_flags[8] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[8] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev5_r3.display(value17 + 0.5)
-        elif sensor_flags[8] == 3 and canal == 'Par':
+        elif self.sensor_flags[8] == 3 and self.canal == 'Par':
             self.lcdNumber_rev5_r3.display(value17 + 2)
-        elif sensor_flags[8] == 4:
+        elif self.sensor_flags[8] == 4:
             self.lcdNumber_rev5_r3.display(round(value17 * 1.2))
 
-        if sensor_flags[9] == 0:
+        if self.sensor_flags[9] == 0:
             self.lcdNumber_rev5_l1.display(value12)
-        elif sensor_flags[9] == 1:
+        elif self.sensor_flags[9] == 1:
             self.lcdNumber_rev5_l1.display(0)
-        elif sensor_flags[9] == 2:
+        elif self.sensor_flags[9] == 2:
             pass
-        elif sensor_flags[9] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[9] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev5_l1.display(value12 + 10)
-        elif sensor_flags[9] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[9] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev5_l1.display(value12 + 0.5)
-        elif sensor_flags[9] == 3 and canal == 'Par':
+        elif self.sensor_flags[9] == 3 and self.canal == 'Par':
             self.lcdNumber_rev5_l1.display(value12 + 2)
-        elif sensor_flags[9] == 4:
+        elif self.sensor_flags[9] == 4:
             self.lcdNumber_rev5_l1.display(round(value12 * 1.2))
 
-        if sensor_flags[10] == 0:
+        if self.sensor_flags[10] == 0:
             self.lcdNumber_rev5_l2.display(value13)
-        elif sensor_flags[10] == 1:
+        elif self.sensor_flags[10] == 1:
             self.lcdNumber_rev5_l2.display(0)
-        elif sensor_flags[10] == 2:
+        elif self.sensor_flags[10] == 2:
             pass
-        elif sensor_flags[10] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[10] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev5_l2.display(value13 + 10)
-        elif sensor_flags[10] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[10] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev5_l2.display(value13 + 0.5)
-        elif sensor_flags[10] == 3 and canal == 'Par':
+        elif self.sensor_flags[10] == 3 and self.canal == 'Par':
             self.lcdNumber_rev5_l2.display(value13 + 2)
-        elif sensor_flags[10] == 4:
+        elif self.sensor_flags[10] == 4:
             self.lcdNumber_rev5_l2.display(round(value13 * 1.2))
 
-        if sensor_flags[11] == 0:
+        if self.sensor_flags[11] == 0:
             self.lcdNumber_rev5_l3.display(value14)
-        elif sensor_flags[11] == 1:
+        elif self.sensor_flags[11] == 1:
             self.lcdNumber_rev5_l3.display(0)
-        elif sensor_flags[11] == 2:
+        elif self.sensor_flags[11] == 2:
             pass
-        elif sensor_flags[11] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[11] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev5_l3.display(value14 + 10)
-        elif sensor_flags[11] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[11] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev5_l3.display(value14 + 0.5)
-        elif sensor_flags[11] == 3 and canal == 'Par':
+        elif self.sensor_flags[11] == 3 and self.canal == 'Par':
             self.lcdNumber_rev5_l3.display(value14 + 2)
-        elif sensor_flags[11] == 4:
+        elif self.sensor_flags[11] == 4:
             self.lcdNumber_rev5_l3.display(round(value14 * 1.2))
 
-        if sensor_flags[12] == 0:
+        if self.sensor_flags[12] == 0:
             self.lcdNumber_rev8_r1.display(value21)
-        elif sensor_flags[12] == 1:
+        elif self.sensor_flags[12] == 1:
             self.lcdNumber_rev8_r1.display(0)
-        elif sensor_flags[12] == 2:
+        elif self.sensor_flags[12] == 2:
             pass
-        elif sensor_flags[12] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[12] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev8_r1.display(value21 + 10)
-        elif sensor_flags[12] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[12] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev8_r1.display(value21 + 0.5)
-        elif sensor_flags[12] == 3 and canal == 'Par':
+        elif self.sensor_flags[12] == 3 and self.canal == 'Par':
             self.lcdNumber_rev8_r1.display(value21 + 2)
-        elif sensor_flags[12] == 4:
+        elif self.sensor_flags[12] == 4:
             self.lcdNumber_rev8_r1.display(round(value21 * 1.2))
 
-        if sensor_flags[13] == 0:
+        if self.sensor_flags[13] == 0:
             self.lcdNumber_rev8_r2.display(value22)
-        elif sensor_flags[13] == 1:
+        elif self.sensor_flags[13] == 1:
             self.lcdNumber_rev8_r2.display(0)
-        elif sensor_flags[13] == 2:
+        elif self.sensor_flags[13] == 2:
             pass
-        elif sensor_flags[13] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[13] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev8_r2.display(value22 + 10)
-        elif sensor_flags[13] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[13] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev8_r2.display(value22 + 0.5)
-        elif sensor_flags[13] == 3 and canal == 'Par':
+        elif self.sensor_flags[13] == 3 and self.canal == 'Par':
             self.lcdNumber_rev8_r2.display(value22 + 2)
-        elif sensor_flags[13] == 4:
+        elif self.sensor_flags[13] == 4:
             self.lcdNumber_rev8_r2.display(round(value22 * 1.2))
 
-        if sensor_flags[14] == 0:
+        if self.sensor_flags[14] == 0:
             self.lcdNumber_rev8_r3.display(value23)
-        elif sensor_flags[14] == 1:
+        elif self.sensor_flags[14] == 1:
             self.lcdNumber_rev8_r3.display(0)
-        elif sensor_flags[14] == 2:
+        elif self.sensor_flags[14] == 2:
             pass
-        elif sensor_flags[14] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[14] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev8_r3.display(value23 + 10)
-        elif sensor_flags[14] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[14] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev8_r3.display(value23 + 0.5)
-        elif sensor_flags[14] == 3 and canal == 'Par':
+        elif self.sensor_flags[14] == 3 and self.canal == 'Par':
             self.lcdNumber_rev8_r3.display(value23 + 2)
-        elif sensor_flags[14] == 4:
+        elif self.sensor_flags[14] == 4:
             self.lcdNumber_rev8_r3.display(round(value23 * 1.2))
 
-        if sensor_flags[15] == 0:
+        if self.sensor_flags[15] == 0:
             self.lcdNumber_rev8_l1.display(value18)
-        elif sensor_flags[15] == 1:
+        elif self.sensor_flags[15] == 1:
             self.lcdNumber_rev8_l1.display(0)
-        elif sensor_flags[15] == 2:
+        elif self.sensor_flags[15] == 2:
             pass
-        elif sensor_flags[15] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[15] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev8_l1.display(value18 + 10)
-        elif sensor_flags[15] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[15] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev8_l1.display(value18 + 0.5)
-        elif sensor_flags[15] == 3 and canal == 'Par':
+        elif self.sensor_flags[15] == 3 and self.canal == 'Par':
             self.lcdNumber_rev8_l1.display(value18 + 2)
-        elif sensor_flags[15] == 4:
+        elif self.sensor_flags[15] == 4:
             self.lcdNumber_rev8_l1.display(round(value18 * 1.2))
 
-        if sensor_flags[16] == 0:
+        if self.sensor_flags[16] == 0:
             self.lcdNumber_rev8_l2.display(value19)
-        elif sensor_flags[16] == 1:
+        elif self.sensor_flags[16] == 1:
             self.lcdNumber_rev8_l2.display(0)
-        elif sensor_flags[16] == 2:
+        elif self.sensor_flags[16] == 2:
             pass
-        elif sensor_flags[16] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[16] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev8_l2.display(value19 + 10)
-        elif sensor_flags[16] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[16] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev8_l2.display(value19 + 0.5)
-        elif sensor_flags[16] == 3 and canal == 'Par':
+        elif self.sensor_flags[16] == 3 and self.canal == 'Par':
             self.lcdNumber_rev8_l2.display(value19 + 2)
-        elif sensor_flags[16] == 4:
+        elif self.sensor_flags[16] == 4:
             self.lcdNumber_rev8_l2.display(round(value19 * 1.2))
 
-        if sensor_flags[17] == 0:
+        if self.sensor_flags[17] == 0:
             self.lcdNumber_rev8_l3.display(value20)
-        elif sensor_flags[17] == 1:
+        elif self.sensor_flags[17] == 1:
             self.lcdNumber_rev8_l3.display(0)
-        elif sensor_flags[17] == 2:
+        elif self.sensor_flags[17] == 2:
             pass
-        elif sensor_flags[17] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[17] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev8_l3.display(value20 + 10)
-        elif sensor_flags[17] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[17] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev8_l3.display(value20 + 0.5)
-        elif sensor_flags[17] == 3 and canal == 'Par':
+        elif self.sensor_flags[17] == 3 and self.canal == 'Par':
             self.lcdNumber_rev8_l3.display(value20 + 2)
-        elif sensor_flags[17] == 4:
+        elif self.sensor_flags[17] == 4:
             self.lcdNumber_rev8_l3.display(round(value20 * 1.2))
 
-        if sensor_flags[18] == 0:
+        if self.sensor_flags[18] == 0:
             self.lcdNumber_rev11_r1.display(value3)
-        elif sensor_flags[18] == 1:
+        elif self.sensor_flags[18] == 1:
             self.lcdNumber_rev11_r1.display(0)
-        elif sensor_flags[18] == 2:
+        elif self.sensor_flags[18] == 2:
             pass
-        elif sensor_flags[18] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[18] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev11_r1.display(value3 + 10)
-        elif sensor_flags[18] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[18] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev11_r1.display(value3 + 0.5)
-        elif sensor_flags[18] == 3 and canal == 'Par':
+        elif self.sensor_flags[18] == 3 and self.canal == 'Par':
             self.lcdNumber_rev11_r1.display(value3 + 2)
-        elif sensor_flags[18] == 4:
+        elif self.sensor_flags[18] == 4:
             self.lcdNumber_rev11_r1.display(round(value3 * 1.2))
 
-        if sensor_flags[19] == 0:
+        if self.sensor_flags[19] == 0:
             self.lcdNumber_rev11_r2.display(value4)
-        elif sensor_flags[19] == 1:
+        elif self.sensor_flags[19] == 1:
             self.lcdNumber_rev11_r2.display(0)
-        elif sensor_flags[19] == 2:
+        elif self.sensor_flags[19] == 2:
             pass
-        elif sensor_flags[19] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[19] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev11_r2.display(value4 + 10)
-        elif sensor_flags[19] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[19] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev11_r2.display(value4 + 0.5)
-        elif sensor_flags[19] == 3 and canal == 'Par':
+        elif self.sensor_flags[19] == 3 and self.canal == 'Par':
             self.lcdNumber_rev11_r2.display(value4 + 2)
-        elif sensor_flags[19] == 4:
+        elif self.sensor_flags[19] == 4:
             self.lcdNumber_rev11_r2.display(round(value4 * 1.2))
 
-        if sensor_flags[20] == 0:
+        if self.sensor_flags[20] == 0:
             self.lcdNumber_rev11_r3.display(value5)
-        elif sensor_flags[20] == 1:
+        elif self.sensor_flags[20] == 1:
             self.lcdNumber_rev11_r3.display(0)
-        elif sensor_flags[20] == 2:
+        elif self.sensor_flags[20] == 2:
             pass
-        elif sensor_flags[20] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[20] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev11_r3.display(value5 + 10)
-        elif sensor_flags[20] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[20] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev11_r3.display(value5 + 0.5)
-        elif sensor_flags[20] == 3 and canal == 'Par':
+        elif self.sensor_flags[20] == 3 and self.canal == 'Par':
             self.lcdNumber_rev11_r3.display(value5 + 2)
-        elif sensor_flags[20] == 4:
+        elif self.sensor_flags[20] == 4:
             self.lcdNumber_rev11_r3.display(round(value5 * 1.2))
 
-        if sensor_flags[21] == 0:
+        if self.sensor_flags[21] == 0:
             self.lcdNumber_rev11_l1.display(value0)
-        elif sensor_flags[21] == 1:
+        elif self.sensor_flags[21] == 1:
             self.lcdNumber_rev11_l1.display(0)
-        elif sensor_flags[21] == 2:
+        elif self.sensor_flags[21] == 2:
             pass
-        elif sensor_flags[21] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[21] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev11_l1.display(value0 + 10)
-        elif sensor_flags[21] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[21] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev11_l1.display(value0 + 0.5)
-        elif sensor_flags[21] == 3 and canal == 'Par':
+        elif self.sensor_flags[21] == 3 and self.canal == 'Par':
             self.lcdNumber_rev11_l1.display(value0 + 2)
-        elif sensor_flags[21] == 4:
+        elif self.sensor_flags[21] == 4:
             self.lcdNumber_rev11_l1.display(value0 * 1.2)
 
-        if sensor_flags[22] == 0:
+        if self.sensor_flags[22] == 0:
             self.lcdNumber_rev11_l2.display(value1)
-        elif sensor_flags[22] == 1:
+        elif self.sensor_flags[22] == 1:
             self.lcdNumber_rev11_l2.display(0)
-        elif sensor_flags[22] == 2:
+        elif self.sensor_flags[22] == 2:
             pass
-        elif sensor_flags[22] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[22] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev11_l2.display(value1 + 10)
-        elif sensor_flags[22] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[22] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev11_l2.display(value1 + 0.5)
-        elif sensor_flags[22] == 3 and canal == 'Par':
+        elif self.sensor_flags[22] == 3 and self.canal == 'Par':
             self.lcdNumber_rev11_l2.display(value1 + 2)
-        elif sensor_flags[22] == 4:
+        elif self.sensor_flags[22] == 4:
             self.lcdNumber_rev11_l2.display(round(value1 * 1.2))
 
-        if sensor_flags[23] == 0:
+        if self.sensor_flags[23] == 0:
             self.lcdNumber_rev11_l3.display(value2)
-        elif sensor_flags[23] == 1:
+        elif self.sensor_flags[23] == 1:
             self.lcdNumber_rev11_l3.display(0)
-        elif sensor_flags[23] == 2:
+        elif self.sensor_flags[23] == 2:
             pass
-        elif sensor_flags[23] == 3 and canal == 'Ángulo':
+        elif self.sensor_flags[23] == 3 and self.canal == 'Ángulo':
             self.lcdNumber_rev11_l3.display(value2 + 10)
-        elif sensor_flags[23] == 3 and canal == 'Velocidad angular':
+        elif self.sensor_flags[23] == 3 and self.canal == 'Velocidad angular':
             self.lcdNumber_rev11_l3.display(value2 + 0.5)
-        elif sensor_flags[23] == 3 and canal == 'Par':
+        elif self.sensor_flags[23] == 3 and self.canal == 'Par':
             self.lcdNumber_rev11_l3.display(value2 + 2)
-        elif sensor_flags[23] == 4:
+        elif self.sensor_flags[23] == 4:
             self.lcdNumber_rev11_l3.display(round(value2 * 1.2))
 
 
@@ -662,19 +662,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev3_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev3_r1.text() == 'f':
-            sensor_flags[0] = 1
+            self.sensor_flags[0] = 1
             self.lineEdit_rev3_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev3_r1.text() == 'g':
-            sensor_flags[0] = 2
+            self.sensor_flags[0] = 2
             self.lineEdit_rev3_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev3_r1.text() == 'h':
-            sensor_flags[0] = 3
+            self.sensor_flags[0] = 3
             self.lineEdit_rev3_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev3_r1.text() == 'i':
-            sensor_flags[0] = 4
+            self.sensor_flags[0] = 4
             self.lineEdit_rev3_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -723,19 +723,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev3_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev3_r2.text() == 'f':
-            sensor_flags[1] = 1
+            self.sensor_flags[1] = 1
             self.lineEdit_rev3_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev3_r2.text() == 'g':
-            sensor_flags[1] = 2
+            self.sensor_flags[1] = 2
             self.lineEdit_rev3_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev3_r2.text() == 'h':
-            sensor_flags[1] = 3
+            self.sensor_flags[1] = 3
             self.lineEdit_rev3_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev3_r2.text() == 'i':
-            sensor_flags[1] = 4
+            self.sensor_flags[1] = 4
             self.lineEdit_rev3_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -784,19 +784,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev3_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev3_r3.text() == 'f':
-            sensor_flags[2] = 1
+            self.sensor_flags[2] = 1
             self.lineEdit_rev3_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev3_r3.text() == 'g':
-            sensor_flags[2] = 2
+            self.sensor_flags[2] = 2
             self.lineEdit_rev3_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev3_r3.text() == 'h':
-            sensor_flags[2] = 3
+            self.sensor_flags[2] = 3
             self.lineEdit_rev3_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev3_r3.text() == 'i':
-            sensor_flags[2] = 4
+            self.sensor_flags[2] = 4
             self.lineEdit_rev3_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -845,19 +845,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev3_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev3_l1.text() == 'f':
-            sensor_flags[3] = 1
+            self.sensor_flags[3] = 1
             self.lineEdit_rev3_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev3_l1.text() == 'g':
-            sensor_flags[3] = 2
+            self.sensor_flags[3] = 2
             self.lineEdit_rev3_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev3_l1.text() == 'h':
-            sensor_flags[3] = 3
+            self.sensor_flags[3] = 3
             self.lineEdit_rev3_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev3_l1.text() == 'i':
-            sensor_flags[3] = 4
+            self.sensor_flags[3] = 4
             self.lineEdit_rev3_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -906,19 +906,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev3_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev3_l2.text() == 'f':
-            sensor_flags[4] = 1
+            self.sensor_flags[4] = 1
             self.lineEdit_rev3_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev3_l2.text() == 'g':
-            sensor_flags[4] = 2
+            self.sensor_flags[4] = 2
             self.lineEdit_rev3_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev3_l2.text() == 'h':
-            sensor_flags[4] = 3
+            self.sensor_flags[4] = 3
             self.lineEdit_rev3_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev3_l2.text() == 'i':
-            sensor_flags[4] = 4
+            self.sensor_flags[4] = 4
             self.lineEdit_rev3_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -967,19 +967,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev3_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev3_l3.text() == 'f':
-            sensor_flags[5] = 1
+            self.sensor_flags[5] = 1
             self.lineEdit_rev3_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev3_l3.text() == 'g':
-            sensor_flags[5] = 2
+            self.sensor_flags[5] = 2
             self.lineEdit_rev3_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev3_l3.text() == 'h':
-            sensor_flags[5] = 3
+            self.sensor_flags[5] = 3
             self.lineEdit_rev3_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev3_l3.text() == 'i':
-            sensor_flags[5] = 4
+            self.sensor_flags[5] = 4
             self.lineEdit_rev3_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1028,19 +1028,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev5_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev5_r1.text() == 'f':
-            sensor_flags[6] = 1
+            self.sensor_flags[6] = 1
             self.lineEdit_rev5_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev5_r1.text() == 'g':
-            sensor_flags[6] = 2
+            self.sensor_flags[6] = 2
             self.lineEdit_rev5_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev5_r1.text() == 'h':
-            sensor_flags[6] = 3
+            self.sensor_flags[6] = 3
             self.lineEdit_rev5_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev5_r1.text() == 'i':
-            sensor_flags[6] = 4
+            self.sensor_flags[6] = 4
             self.lineEdit_rev5_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1090,19 +1090,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev5_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev5_r2.text() == 'f':
-            sensor_flags[7] = 1
+            self.sensor_flags[7] = 1
             self.lineEdit_rev5_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev5_r2.text() == 'g':
-            sensor_flags[7] = 2
+            self.sensor_flags[7] = 2
             self.lineEdit_rev5_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev5_r2.text() == 'h':
-            sensor_flags[7] = 3
+            self.sensor_flags[7] = 3
             self.lineEdit_rev5_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev5_r2.text() == 'i':
-            sensor_flags[7] = 4
+            self.sensor_flags[7] = 4
             self.lineEdit_rev5_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1152,19 +1152,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev5_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev5_r3.text() == 'f':
-            sensor_flags[8] = 1
+            self.sensor_flags[8] = 1
             self.lineEdit_rev5_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev5_r3.text() == 'g':
-            sensor_flags[8] = 2
+            self.sensor_flags[8] = 2
             self.lineEdit_rev5_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev5_r3.text() == 'h':
-            sensor_flags[8] = 3
+            self.sensor_flags[8] = 3
             self.lineEdit_rev5_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev5_r3.text() == 'i':
-            sensor_flags[8] = 4
+            self.sensor_flags[8] = 4
             self.lineEdit_rev5_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1214,19 +1214,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev5_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev5_l1.text() == 'f':
-            sensor_flags[9] = 1
+            self.sensor_flags[9] = 1
             self.lineEdit_rev5_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev5_l1.text() == 'g':
-            sensor_flags[9] = 2
+            self.sensor_flags[9] = 2
             self.lineEdit_rev5_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev5_l1.text() == 'h':
-            sensor_flags[9] = 3
+            self.sensor_flags[9] = 3
             self.lineEdit_rev5_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev5_l1.text() == 'i':
-            sensor_flags[9] = 4
+            self.sensor_flags[9] = 4
             self.lineEdit_rev5_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1276,19 +1276,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev5_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev5_l2.text() == 'f':
-            sensor_flags[10] = 1
+            self.sensor_flags[10] = 1
             self.lineEdit_rev5_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev5_l2.text() == 'g':
-            sensor_flags[10] = 2
+            self.sensor_flags[10] = 2
             self.lineEdit_rev5_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev5_l2.text() == 'h':
-            sensor_flags[10] = 3
+            self.sensor_flags[10] = 3
             self.lineEdit_rev5_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev5_l2.text() == 'i':
-            sensor_flags[10] = 4
+            self.sensor_flags[10] = 4
             self.lineEdit_rev5_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1338,19 +1338,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev5_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev5_l3.text() == 'f':
-            sensor_flags[11] = 1
+            self.sensor_flags[11] = 1
             self.lineEdit_rev5_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev5_l3.text() == 'g':
-            sensor_flags[11] = 2
+            self.sensor_flags[11] = 2
             self.lineEdit_rev5_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev5_l3.text() == 'h':
-            sensor_flags[11] = 3
+            self.sensor_flags[11] = 3
             self.lineEdit_rev5_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev5_l3.text() == 'i':
-            sensor_flags[11] = 4
+            self.sensor_flags[11] = 4
             self.lineEdit_rev5_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1399,19 +1399,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev8_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev8_r1.text() == 'f':
-            sensor_flags[12] = 1
+            self.sensor_flags[12] = 1
             self.lineEdit_rev8_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev8_r1.text() == 'g':
-            sensor_flags[12] = 2
+            self.sensor_flags[12] = 2
             self.lineEdit_rev8_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev8_r1.text() == 'h':
-            sensor_flags[12] = 3
+            self.sensor_flags[12] = 3
             self.lineEdit_rev8_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev8_r1.text() == 'i':
-            sensor_flags[12] = 4
+            self.sensor_flags[12] = 4
             self.lineEdit_rev8_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1461,19 +1461,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev8_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev8_r2.text() == 'f':
-            sensor_flags[13] = 1
+            self.sensor_flags[13] = 1
             self.lineEdit_rev8_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev8_r2.text() == 'g':
-            sensor_flags[13] = 2
+            self.sensor_flags[13] = 2
             self.lineEdit_rev8_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev8_r2.text() == 'h':
-            sensor_flags[13] = 3
+            self.sensor_flags[13] = 3
             self.lineEdit_rev8_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev8_r2.text() == 'i':
-            sensor_flags[13] = 4
+            self.sensor_flags[13] = 4
             self.lineEdit_rev8_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1523,19 +1523,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev8_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev8_r3.text() == 'f':
-            sensor_flags[14] = 1
+            self.sensor_flags[14] = 1
             self.lineEdit_rev8_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev8_r3.text() == 'g':
-            sensor_flags[14] = 2
+            self.sensor_flags[14] = 2
             self.lineEdit_rev8_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev8_r3.text() == 'h':
-            sensor_flags[14] = 3
+            self.sensor_flags[14] = 3
             self.lineEdit_rev8_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev8_r3.text() == 'i':
-            sensor_flags[14] = 4
+            self.sensor_flags[14] = 4
             self.lineEdit_rev8_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1585,19 +1585,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev8_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev8_l1.text() == 'f':
-            sensor_flags[15] = 1
+            self.sensor_flags[15] = 1
             self.lineEdit_rev8_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev8_l1.text() == 'g':
-            sensor_flags[15] = 2
+            self.sensor_flags[15] = 2
             self.lineEdit_rev8_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev8_l1.text() == 'h':
-            sensor_flags[15] = 3
+            self.sensor_flags[15] = 3
             self.lineEdit_rev8_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev8_l1.text() == 'i':
-            sensor_flags[15] = 4
+            self.sensor_flags[15] = 4
             self.lineEdit_rev8_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1647,19 +1647,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev8_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev8_l2.text() == 'f':
-            sensor_flags[16] = 1
+            self.sensor_flags[16] = 1
             self.lineEdit_rev8_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev8_l2.text() == 'g':
-            sensor_flags[16] = 2
+            self.sensor_flags[16] = 2
             self.lineEdit_rev8_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev8_l2.text() == 'h':
-            sensor_flags[16] = 3
+            self.sensor_flags[16] = 3
             self.lineEdit_rev8_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev8_l2.text() == 'i':
-            sensor_flags[16] = 4
+            self.sensor_flags[16] = 4
             self.lineEdit_rev8_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1709,19 +1709,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev8_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev8_l3.text() == 'f':
-            sensor_flags[17] = 1
+            self.sensor_flags[17] = 1
             self.lineEdit_rev8_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev8_l3.text() == 'g':
-            sensor_flags[17] = 2
+            self.sensor_flags[17] = 2
             self.lineEdit_rev8_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev8_l3.text() == 'h':
-            sensor_flags[17] = 3
+            self.sensor_flags[17] = 3
             self.lineEdit_rev8_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev8_l3.text() == 'i':
-            sensor_flags[17] = 4
+            self.sensor_flags[17] = 4
             self.lineEdit_rev8_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1770,19 +1770,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev11_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev11_r1.text() == 'f':
-            sensor_flags[18] = 1
+            self.sensor_flags[18] = 1
             self.lineEdit_rev11_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev11_r1.text() == 'g':
-            sensor_flags[18] = 2
+            self.sensor_flags[18] = 2
             self.lineEdit_rev11_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev11_r1.text() == 'h':
-            sensor_flags[18] = 3
+            self.sensor_flags[18] = 3
             self.lineEdit_rev11_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev11_r1.text() == 'i':
-            sensor_flags[18] = 4
+            self.sensor_flags[18] = 4
             self.lineEdit_rev11_r1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1832,19 +1832,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev11_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev11_r2.text() == 'f':
-            sensor_flags[19] = 1
+            self.sensor_flags[19] = 1
             self.lineEdit_rev11_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev11_r2.text() == 'g':
-            sensor_flags[19] = 2
+            self.sensor_flags[19] = 2
             self.lineEdit_rev11_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev11_r2.text() == 'h':
-            sensor_flags[19] = 3
+            self.sensor_flags[19] = 3
             self.lineEdit_rev11_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev11_r2.text() == 'i':
-            sensor_flags[19] = 4
+            self.sensor_flags[19] = 4
             self.lineEdit_rev11_r2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1894,19 +1894,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev11_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev11_r3.text() == 'f':
-            sensor_flags[20] = 1
+            self.sensor_flags[20] = 1
             self.lineEdit_rev11_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev11_r3.text() == 'g':
-            sensor_flags[20] = 2
+            self.sensor_flags[20] = 2
             self.lineEdit_rev11_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev11_r3.text() == 'h':
-            sensor_flags[20] = 3
+            self.sensor_flags[20] = 3
             self.lineEdit_rev11_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev11_r3.text() == 'i':
-            sensor_flags[20] = 4
+            self.sensor_flags[20] = 4
             self.lineEdit_rev11_r3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -1956,19 +1956,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev11_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev11_l1.text() == 'f':
-            sensor_flags[21] = 1
+            self.sensor_flags[21] = 1
             self.lineEdit_rev11_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev11_l1.text() == 'g':
-            sensor_flags[21] = 2
+            self.sensor_flags[21] = 2
             self.lineEdit_rev11_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev11_l1.text() == 'h':
-            sensor_flags[21] = 3
+            self.sensor_flags[21] = 3
             self.lineEdit_rev11_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev11_l1.text() == 'i':
-            sensor_flags[21] = 4
+            self.sensor_flags[21] = 4
             self.lineEdit_rev11_l1.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -2018,19 +2018,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev11_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev11_l2.text() == 'f':
-            sensor_flags[22] = 1
+            self.sensor_flags[22] = 1
             self.lineEdit_rev11_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev11_l2.text() == 'g':
-            sensor_flags[22] = 2
+            self.sensor_flags[22] = 2
             self.lineEdit_rev11_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev11_l2.text() == 'h':
-            sensor_flags[22] = 3
+            self.sensor_flags[22] = 3
             self.lineEdit_rev11_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev11_l2.text() == 'i':
-            sensor_flags[22] = 4
+            self.sensor_flags[22] = 4
             self.lineEdit_rev11_l2.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -2080,19 +2080,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_rev11_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'e' en " + art)
         elif self.lineEdit_rev11_l3.text() == 'f':
-            sensor_flags[23] = 1
+            self.sensor_flags[23] = 1
             self.lineEdit_rev11_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'f' en " + art)
         elif self.lineEdit_rev11_l3.text() == 'g':
-            sensor_flags[23] = 2
+            self.sensor_flags[23] = 2
             self.lineEdit_rev11_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'g' en " + art)
         elif self.lineEdit_rev11_l3.text() == 'h':
-            sensor_flags[23] = 3
+            self.sensor_flags[23] = 3
             self.lineEdit_rev11_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'h' en " + art)
         elif self.lineEdit_rev11_l3.text() == 'i':
-            sensor_flags[23] = 4
+            self.sensor_flags[23] = 4
             self.lineEdit_rev11_l3.clear()
             self.plainTextEdit_reg_fallos.appendPlainText("Fallo 'i' en " + art)
         else:
@@ -2139,13 +2139,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_cod_fallos.setText('Código: i')
 
     def set_canal(self, text):
-        for i, val in enumerate(sensor_flags):
-            if sensor_flags[i] != 0:
-                fallo_sens = True
-                sensor_flags[i] = 0
-        if fallo_sens:
+        for i, val in enumerate(self.sensor_flags):
+            if self.sensor_flags[i] != 0:
+                self.fallo_sens = True
+                self.sensor_flags[i] = 0
+        if self.fallo_sens:
             self.plainTextEdit_reg_fallos.appendPlainText("Sensores reiniciados")
-            fallo_sens = False
+            self.fallo_sens = False
 
         try:
             self.pos.msg.disconnect(self.updateLCD)
@@ -2162,15 +2162,15 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if text == 'Ángulo':
             self.label_tit.setText('Ángulo de cada articulación (º)')
             self.pos.msg.connect(self.updateLCD)
-            canal = 'Ángulo'
+            self.canal = 'Ángulo'
         if text == 'Velocidad angular':
             self.label_tit.setText('Velocidad angular de cada articulación (rad/s)')
             self.vel.msg.connect(self.updateLCD)
-            canal = 'Velocidad angular'
+            self.canal = 'Velocidad angular'
         if text == 'Par':
             self.label_tit.setText('Par de cada articulación (Nm)')
             self.par.msg.connect(self.updateLCD)
-            canal = 'Par'
+            self.canal = 'Par'
         self.comboBox_canal.setCurrentText("Seleccione canal")
 
     def save_log(self):
