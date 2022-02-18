@@ -1,17 +1,22 @@
 # RMsim
 
-The **ROBOMINERS Robot Simulator** is a simulator of a modular robot to be used in the exploration of metacontrol strategies for the improvement of adaptivity and autonomy.
+The **ROBOMINERS Robot Simulator (RMsim)** is a simulator of autonomous modular robots to be used in the exploration of metacontrol strategies for the improvement of adaptivity and autonomy.
 
-The purpose of RMsim is the development of a simulation testbed on Gazebo to be used in:
+The purpose of the RMsim is the development of a customizable simulation testbed on Gazebo to be used in:
 
-* The design of the robot structure.
+* The design and test of the robot mechanical structure.
 * The test of the high-level reconfiguration metacontrollers.
 
-The system will also provide a ROS2 API to interact with the virtual robot.
+RMsim shall be able to manage different **robot models** set in different **worlds** using different **controlllers**. The controllers themselves are not part of RMsim, but RMThe simulator shall provide a ROS2 API to interact with the virtual robot.
 
-## About the robot
+---
+## About the robots
 
-The initial target robot is the modular robot ROMERIN developed at the UPM ETSIDI. The system shall be able to manage different robot models. ROMERIN characteristics are the following:
+The initial target robot is the modular robot ROMERIN developed at the UPM ETSIDI. A second objective is the RM2 ROBOMINERS robot.
+
+### ROMERIN robot
+
+ROMERIN characteristics are the following:
 
 * It has four modules: ODIN, THOR, LOKI and FRIGG.
 * 7 controlled degrees of freedom  3-1-3
@@ -25,6 +30,11 @@ M. Hernando, A. Brunete, and E. Gambao. ROMERIN: A modular climber robot for inf
 
 ![ROMERIN leg module 3D rendition](https://github.com/aslab/rmsim/blob/master/images/ROMERIN-leg-3D.png)
 
+### RM2 robot
+
+THe RM2 robot is a laboratory robot used to study mining robot modularity inside the ROBOMINERS project.
+
+---
 ## A Basic Scenario
 
 ### Context
@@ -37,15 +47,6 @@ The ROBOMINERS robot is performing the mining operations it was designed to do. 
 
 All this happens in the simulation. The metacontroller engineer tests the operation of the metacontroller against the simulation. The simulator is able to perform the simulation (change of physical structure of the robot).
 
-## Work
-
-1. Gather requirements from project and from simulator users. 
-2. Learn Gazebo, ROS2.
-3. Create SysML model of SoI.
-4. Design simulation testbed.
-5. Create robot model. 
-6. Create simulation API.
-
 
 ## Implementation
 
@@ -54,7 +55,6 @@ All this happens in the simulation. The metacontroller engineer tests the operat
 * A user manual.
 
 ***
-
 ## About the ROBOMINERS project
 
 [**ROBOMINERS**](http://robominers.eu) is a project funded under the European Union's Research and Innovation programme Horizon 2020 (grant agreement n°820971) within strategic objective to facilitate EU access to mineral raw materials. ROBOMINERS' innovative approach combines the creation of a new mining ecosystem with novel ideas from other sectors, in particular with the inclusion of disruptive concepts from robotics. This is where we focus our work: mining robots that adapt to harsh conditions. 
